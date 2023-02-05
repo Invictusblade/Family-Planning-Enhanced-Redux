@@ -1,0 +1,450 @@
+[
+  {
+    "id": "M_Condom_Black",
+    "name": "$M_Condom_Black",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Black.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Blue",
+    "name": "$M_Condom_Blue",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Blue.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Grey",
+    "name": "$M_Condom_Grey",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Grey.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Green",
+    "name": "$M_Condom_Green",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Green.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Red",
+    "name": "$M_Condom_Red",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Red.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Purple",
+    "name": "$M_Condom_Purple",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Purple.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_White",
+    "name": "$M_Condom_White",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_White.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Yellow",
+    "name": "$M_Condom_Yellow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Yellow.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Black_Glow",
+    "name": "$M_Condom_Black_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Black.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Blue_Glow",
+    "name": "$M_Condom_Blue_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Blue.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Cyan_Glow",
+    "name": "$M_Condom_Cyan_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Cyan.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Green_Glow",
+    "name": "$M_Condom_Green_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Green.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Pink_Glow",
+    "name": "$M_Condom_Pink_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Pink.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Purple_Glow",
+    "name": "$M_Condom_Purple_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Purple.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_White_Glow",
+    "name": "$M_Condom_White_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_White.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "M_Condom_Yellow_Glow",
+    "name": "$M_Condom_Yellow_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\M_Condom_Glow_Yellow.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 0
+  },
+  {
+    "id": "F_Condom_Black",
+    "name": "$F_Condom_Black",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Black.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Blue",
+    "name": "$F_Condom_Blue",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Blue.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Grey",
+    "name": "$F_Condom_Grey",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Grey.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Green",
+    "name": "$F_Condom_Green",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Green.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Red",
+    "name": "$F_Condom_Red",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Red.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Purple",
+    "name": "$F_Condom_Purple",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Purple.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_White",
+    "name": "$F_Condom_White",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_White.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Yellow",
+    "name": "$F_Condom_Yellow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Yellow.BGSM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Black_Glow",
+    "name": "$F_Condom_Black_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Black.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Blue_Glow",
+    "name": "$F_Condom_Blue_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Blue.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Cyan_Glow",
+    "name": "$F_Condom_Cyan_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Cyan.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Green_Glow",
+    "name": "$F_Condom_Green_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Green.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Pink_Glow",
+    "name": "$F_Condom_Pink_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Pink.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Purple_Glow",
+    "name": "$F_Condom_Purple_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Purple.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_White_Glow",
+    "name": "$F_Condom_White_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_White.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  },
+  {
+    "id": "F_Condom_Yellow_Glow",
+    "name": "$F_Condom_Yellow_Glow",
+    "slots": [
+      {
+        "slot": 3,
+        "material": "overlays\\INVB_WastelandDairy\\F_Condom_Glow_Yellow.BGEM"
+      }
+    ],
+    "playable": true,
+    "transformable": true,
+    "sort": 0,
+    "gender": 1
+  }
+]

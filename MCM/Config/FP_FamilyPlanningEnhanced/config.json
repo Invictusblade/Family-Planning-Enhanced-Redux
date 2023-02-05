@@ -1,0 +1,5214 @@
+{
+	"modName": "FP_FamilyPlanningEnhanced",
+	"displayName": "Family Planning Enhanced Redux",
+	"minMcmVersion": 3,
+	"pluginRequirements": ["FP_FamilyPlanningEnhanced.esp"],
+	"content": [
+
+		{ 
+			"type": "spacer",
+			"numLines": 5
+		},
+		
+		{
+		  "text": "[AAF]",
+		  "align": "center",
+		  "type": "text"
+		},
+		
+		{
+		  "text": "<font size=\"48\"><p align = \"center\">Family Planning Enhanced Redux</p></font>",
+		  "type": "text",
+		  "html": true
+		},
+		{
+		  "text": "<font size=\"24\"><p align = \"center\">Version 4.030</p></font>",
+		  "type": "text",
+		  "html": true
+		},
+		{ "type": "spacer" },
+		
+		{
+		"text": "Redux By Invictusblade",
+		  "align": "center",
+		  "type": "text"
+		},
+		
+		{
+		"text": "with special help from SthanDust",
+		  "align": "center",
+		  "type": "text"
+		},
+		{ "type": "spacer" },
+		
+		{
+		"text": "Original By Chosen Clue and EgoBallistic",
+		  "align": "center",
+		  "type": "text"
+		},
+		{
+		"text": "Based on Vinfamy's Family Planning",
+		  "align": "center",
+		  "type": "text"
+		},
+		
+		{ "type": "spacer" },
+		
+		{
+		"text": "Hover over options in the menus to learn more about them",
+		  "align": "center",
+		  "type": "text"
+		}
+	],
+	"pages": [
+		{
+			"pageDisplayName": "Functionality Options",
+			"content": [
+				{
+					"text": "Functionality Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fDay:Misc",
+					"text": "Days per FPE Month",
+					"type": "slider",
+					"help": "FPE has its own definition of a month. By default, a FPE month is 3 days, so it takes 27 game days for a full pregnancy to occur.\nDo not change too often once FPE features have occurred, as it may have adverse effects. (Recommended)",
+					"valueOptions": {
+					"min": 1,
+					"max": 31,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTime_NPC:Misc",
+					"text": "Time Between Refreshes (NPC)",
+					"type": "slider",
+					"help": "How many Hours between Refreshes for NPCs & Other Timers, (this won't speed up pregnancies) Default : 12 (Recommended)",
+					"valueOptions": {
+					"min": 1,
+					"max": 12,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTime_Player:Misc",
+					"text": "Time Between Refreshes (Player)",
+					"type": "slider",
+					"help": "How many Hours between Refreshes for the Player, (this won't speed up pregnancies) Default : 12 (Recommended)",
+					"valueOptions": {
+					"min": 1,
+					"max": 12,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNPCPlayerSexUseContraOption:Misc",
+					"text": "NPC and Player Contraception Handling",
+					"type": "stepper",
+					"help": "When NPCs have contraceptives in their inventory, this option determines whether it will be chance that they use contraceptives, or if they will always use it when sex starts.\nDefault : Always Use Available Contraceptives",
+					"valueOptions": {
+					"options": ["Chance of Contraceptive Use", "Use Available Contraceptives"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fUndress:Misc",
+					"text": "Undress when giving Birth",
+					"type": "stepper",
+					"help": "This allows the Player and Others to undress when giving Birth. (You need to redress yourself afterwards) Default: Player Only",
+					"valueOptions": {
+					"options": ["Disabled", "Player Only", "Everyone"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Effect Shader Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fCumshot:Misc",
+					"text": "Show Cumshots",
+					"type": "switcher",
+					"help": "This allows you to see semen on the penis or vagina after a sex scene. Default: ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBloodyBirth:Misc",
+					"text": "Show Blood during Birth",
+					"type": "switcher",
+					"help": "This allows you to see Blood on the Vagina after a Birth. Default: ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Pregnancy Control Options (Page 1)",
+			"content": [
+				{
+					"text": "Pregnancy Control Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPlayerImpregsOnly:Misc",
+					"text": "Only the Player Impregnates",
+					"type": "switcher",
+					"help": "This option is good for performance only if you are playing as a player looking to get others pregnant.\nDo not turn this on if you are a player looking to get pregnant, or are looking for NPC on NPC pregnancy. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Female(to Female) Pregnancy Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fFPregPlayerOnly:Misc",
+					"text": "Only Female Player Pregnancy",
+					"type": "switcher",
+					"help": "Disables pregnancy for other women except the female player character. Will save performance. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFemaleToFemaleCum:Misc",
+					"text": "Female to Female Cum",
+					"type": "switcher",
+					"help": "Allows females to impregnate other females. Good for futa characters.  This can impregnate both females if they are fertile. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFemale_Dominant_NPC:Misc",
+					"text": "Female to Female Sex Outcome",
+					"type": "switcher",
+					"help": "Forces the female Player to be the Father as a result of impregnation of Female to Female Sex Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Male(to Male) Pregnancy Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMPreg:Misc",
+					"text": "Male Pregnancy",
+					"type": "switcher",
+					"help": "Allows males to get pregnant. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMaleToMaleCum:Misc",
+					"text": "Male to Male Cum",
+					"type": "switcher",
+					"help": "Allows Males to impregnate other Males. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMale_Dominant_NPC:Misc",
+					"text": "Male to Male Sex Outcome",
+					"type": "switcher",
+					"help": "Forces the male Player to be the Father as a result of impregnation during Male to Male Sex Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>These two options(above and below) will conflict with each other. Choose only one</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fMPregPlayerOnly:Misc",
+					"text": "Toggle if the Male Player can be the only Male to get Pregnant",
+					"type": "switcher",
+					"help": "Disables pregnancy for other men except a male player character. Doesn't affect females. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Pregnancy Control Options (Page 2)",
+			"content": [
+				{
+					"text": "Pregnancy Length Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPregnancyLength_Human:Misc",
+					"text": "Human Pregnancy Length (FPE Months)",
+					"type": "slider",
+					"help": "How long it takes for a human pregnancy, in FPE months. (+1 for players because of Labour quest) Default : 9 FP Months",
+					"valueOptions": {
+					"min": 1,
+					"max": 20,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnancyLength_Ghoul:Misc",
+					"text": "Ghoul Pregnancy Length (FPE Months)",
+					"type": "slider",
+					"help": "How long it takes for a Ghoul pregnancy, in FPE months. (+1 for players because of Labour quest) Default : 9 FP Months",
+					"valueOptions": {
+					"min": 1,
+					"max": 20,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature Pregnancy Length Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='14'>Lactation products has been moved to Wasteland Dairy Framework</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fLactationMonth:Misc",
+					"text": "How many Months before Birth, can Lactation begin",
+					"type": "slider",
+					"help": "how many months before the due date, can lactation occur in the mother. (Note Lactation can occur during birth) Default : 3",
+					"valueOptions": {
+					"min": 1,
+					"max": 6,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Morph Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPower:Misc",
+					"text": "Morph Power (Base)",
+					"type": "slider",
+					"help": "How much the pregnancy will visually affect the pregnant. Base Belly size for pregnancies. (Affects all pregnancies) Default : 5 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 20,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMorph_Human:Misc",
+					"text": "Morph Modifier (Human pregnancies)",
+					"type": "slider",
+					"help": "Belly size modifier for human pregnancies, applies as a modifier to base Morph Power Default : 1 (Recommended)",
+					"valueOptions": {
+					"min": 0.0,
+					"max": 2.0,
+					"step": 0.05,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMorph_Ghoul:Misc",
+					"text": "Morph Modifier (Ghoul pregnancies)",
+					"type": "slider",
+					"help": "Belly size modifier for Ghoul pregnancies, applies as a modifier to base Morph Power Default : 1 (Recommended)",
+					"valueOptions": {
+					"min": 0.0,
+					"max": 2.0,
+					"step": 0.05,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fLastingMorphs:Misc",
+					"text": "Lasting Body Morphs After Pregnancy",
+					"type": "switcher",
+					"help": "This option leaves some left over body changes for pregnant women, to simulate body growth for breastfeeding.\nNote, lasting body morphs is permanent for all actors who have fully gone through pregnancy and are not pregnant. Player still gets reset during reset, however. Default: OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature Pregnancy Morphs Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Pregnancy Control Options (Page 3)",
+			"content": [
+				{
+					"text": "Additional Player Impregnation Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fRequirePipboy:Misc",
+					"text": "Require Pipboy",
+					"type": "switcher",
+					"help": "Some for reason, I added a check for the player wearing a pipboy. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllowElder:Misc",
+					"text": "Allow Elderly",
+					"type": "switcher",
+					"help": "Allow Elderly NPC to get Pregnant. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Pregnancy Craving Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fCraving_Toggle:Craving",
+					"text": "Pregnancy Craving Toggle and Power",
+					"type": "stepper",
+					"help": "Toggles if Pregnancy Cravings occur and how powerful they are. Default : 1X",
+					"valueOptions": {
+					"options": ["Off", "0X", "1X", "2X"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCraving_Cycle:Craving",
+					"text": "How Often Pregnancy Cravings Occur",
+					"type": "stepper",
+					"help": "How often does Pregnancy Cravings Occur. Monthly = Once per FPE Month, Pregnancy Cycle = look at 'Time Between Refreshes (Player)' Default : Per Pregnancy Cycle",
+					"valueOptions": {
+					"options": ["Monthly", "Pregnancy Cycle"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCraving_Chances:Craving",
+					"text": "Chances of Pregnancy Cravings occurring",
+					"type": "slider",
+					"help": "Chances of Pregnancy Cravings Occurring. Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCraving_Message:Craving",
+					"text": "What type of Craving Message",
+					"type": "stepper",
+					"help": "What type of Craving Message. Notification or Message Box. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Self Impregnation Option",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fSelfImpreg:Misc",
+					"text": "Allow for Self Impregnation",
+					"type": "switcher",
+					"help": "Allows the player, if they can be pregnant and impregnate others, to attempt self-impregnation. To utilize this, you need to equip a condom, then masturbate. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPlayerClone:Misc",
+					"text": "Self Impregnation Clone vs Human Toggle",
+					"type": "stepper",
+					"help": "Changes Self Impregnation to force a clone of the player or just a human. (Requires INVB_WastelandOffspring) Default : Human",
+					"valueOptions": {
+					"options": ["Human", "Clone of Player"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Condom Option",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fEquipNewCondom:Misc",
+					"text": "Equip New Condom After Sex",
+					"type": "switcher",
+					"help": "If you have sex and have condoms left, a new condom will be automatically equipped. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCondomOutcome:Misc",
+					"text": "Outcome of Condoms",
+					"type": "stepper",
+					"help": "Select what is the outcome of using a condom - Nothing, Human Drop, Human and Creature Drop, Human Keep, Human and Creature Keep.",
+					"valueOptions": {
+					"options": ["Nothing","Human Drop", "Human and Creature Drop", "Human Keep", "Human and Creature Keep"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCondom_Choice:Misc",
+					"text": "Condom Choice",
+					"type": "stepper",
+					"help": "If you want Condoms to appear on Bodies when having Sex. Default : Glow or Matte",
+					"valueOptions": {
+					"options": ["Disabled", "Glow or Matte", "Glow", "Matte", "Glow or Matte(Viagra)", "Glow(Viagra)", "Matte(Viagra)", "3D Mesh", "3D Mesh(Viagra)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<p align='center'><font size='12'> so Condoms are now sealed in a packet until it opened before sex scenes. (so they don't appear until required) \n Viagra Condom exist to help with Erection Issues(if required). \n 3D Mesh requires 3rd party mods to work (Haven't been updated yet).</font></p>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Pregnancy Control Options (Page 4)",
+			"content": [
+				{
+					"text": "Dead Pregnancy Behaviour",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fViableMonth:Misc",
+					"text": "How many Months before Birth, Can a viable baby be saved",
+					"type": "slider",
+					"help": "how many months before the due date. can a dying baby appear on a dead pregnant mother. (so (Default Human Pregnancy Length)9 - 3(Default Viable Month) = After 6 Months) Default : 3",
+					"valueOptions": {
+					"min": 1,
+					"max": 6,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fViableMonth_Chance:Misc",
+					"text": "Chances of Viablity",
+					"type": "slider",
+					"help": "what are the chances for a dying baby appear on a dead pregnant mother. (or successful Perk chance) Default : 25",
+					"valueOptions": {
+					"min": 1,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fViableMonth_Perk:Misc",
+					"text": "Perk requirement for Viablity",
+					"type": "switcher",
+					"help": "if a Medic Perk is required to recover a dying baby. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<p align='center'><font size='12'> One of the Medic Perks is Required for Babies to survive the death of their Mother. \n Medic 01 = Chance to recover a dying baby or nothing. \n Medic 02 = Chance to recover a dying baby or nothing. \n Medic 03 = Chance to recover a living baby or a dying baby. \n Medic 04 = 100% chance of recovering a living baby.</font></p>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Skip to... Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fBirth_Human:Birth",
+					"text": "Human Birth Outcome",
+					"type": "stepper",
+					"help": "Straight to Child or Adult - (Baby), (Skip to Child), and (Skip to Adult). Default : Baby.",
+					"valueOptions": {
+					"options": ["Baby", "Skip to Child", "Skip to Adult"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirth_Ghoul:Birth",
+					"text": "Ghoul Birth Outcome",
+					"type": "stepper",
+					"help": "Straight to Child or Adult - (Baby), (Skip to Child), and (Skip to Adult). Default : Baby.",
+					"valueOptions": {
+					"options": ["Baby", "Skip to Child", "Skip to Adult"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<p align='center'><font size='10'>* The following options are for the unique Pregnancy that these factions have (WDF Offspring may be required)</font></p>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fBirth_Human_BoS:Birth",
+					"text": "Brotherhood of Steel Birth Outcome",
+					"type": "stepper",
+					"help": "Straight to Child or Adult - (Baby), (Skip to Child), and (Skip to Adult). Default : Baby.",
+					"valueOptions": {
+					"options": ["Baby", "Skip to Child", "Skip to Adult"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirth_Human_Gunner:Birth",
+					"text": "Gunner Birth Outcome",
+					"type": "stepper",
+					"help": "Straight to Child or Adult - (Baby), (Skip to Child), and (Skip to Adult). Default : Baby.",
+					"valueOptions": {
+					"options": ["Baby", "Skip to Child", "Skip to Adult"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirth_Human_Raider:Birth",
+					"text": "Raider Birth Outcome",
+					"type": "stepper",
+					"help": "Straight to Child or Adult - (Baby), (Skip to Child), and (Skip to Adult). Default : Baby.",
+					"valueOptions": {
+					"options": ["Baby", "Skip to Child", "Skip to Adult"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirth_Human_V81:Birth",
+					"text": "Vault 81 Birth Outcome",
+					"type": "stepper",
+					"help": "Straight to Child or Adult - (Baby), (Skip to Child), and (Skip to Adult). Default : Baby.",
+					"valueOptions": {
+					"options": ["Baby", "Skip to Child", "Skip to Adult"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Surrogate Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Surrogate NPC or Player",
+					"type": "button",
+					"help": "Selecting a NPC or Player to be a Surrogate.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Surrogate"
+					}
+				},
+				{
+					"id": "Surrogate",
+					"text": "Surrogate NPC or Player (Hotkey)",
+					"type": "hotkey",
+					"help": "Selecting a NPC or Player to be a Surrogate."
+				},
+				{
+					"text": "<font size='10'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				}
+				
+			]
+		},
+		{
+			"pageDisplayName": "Post Partum Options",
+			"content": [
+				{
+					"text": "Post Partum",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPostPartum_Toggle:PostPartum",
+					"text": "Post Partum Toggle",
+					"type": "stepper",
+					"help": "Toggles Post Partum. if Set then a number of effects will occur such as slower belly recovery, unable to get pregnant. Disabled, Player Only, Player and NPC within distance of player (1024 units), and Player and NPC. Default : Player Only",
+					"valueOptions": {
+					"options": ["Disabled", "Player Only", "Player and NPC within distance of player", "Player and NPC"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPostPartum_Minimum:PostPartum",
+					"text": "Post Partum Minimum",
+					"type": "slider",
+					"help": "Minimum morph before Post partum is completed. (think of Months of pregnancy so 3 = looks like 3rd month of pregnancy) Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 5,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTime_PostPartum:PostPartum",
+					"text": "Time Between Refreshes (Post Partum)",
+					"type": "slider",
+					"help": "How Much faster does PostPartum go. Instead of the standard refresh time of 12 hours, this will allow for smoother belly transformation.  Default : 12 (Recommended)",
+					"valueOptions": {
+					"min": 1,
+					"max": 12,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPostPartum_Power:PostPartum",
+					"text": "Post Partum Power",
+					"type": "slider",
+					"help": "How powerful is the morph reduction. Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 5,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPostPartum_Infertile:PostPartum",
+					"text": "After Post Partum Infertility Toggle",
+					"type": "switcher",
+					"help": "Toggles that, if after the Post Partum Period. Infertility will occur for a while after. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPostPartum_Pregnant:PostPartum",
+					"text": "Allow Post Partum Pregnancy",
+					"type": "switcher",
+					"help": "Toggles that, if during the Post Partum Period. Pregnancy can occur. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPostPartum_Player:PostPartum",
+					"text": "Post Partum Type (Player)",
+					"type": "stepper",
+					"help": "if the Player are allowed to have Post Partum then do they get an Perk or Not. Default : Perk",
+					"valueOptions": {
+					"options": ["Disabled", "Perk"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPostPartum_NPC:PostPartum",
+					"text": "Post Partum Type (NPC)",
+					"type": "stepper",
+					"help": "if NPCs are allowed to have Post Partum then do they get an Perk or Not. Default : Perk",
+					"valueOptions": {
+					"options": ["Disabled", "Perk"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Non-Human Options",
+			"content": [
+				{
+					"id": "fSynthImpreg:Misc",
+					"text": "Allow Ghoul insemination",
+					"type": "switcher",
+					"help": "Allows insemination from Non-Feral Ghouls. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSynth_Known:Misc",
+					"text": "Disallow Known and Unknown Synths insemination",
+					"type": "stepper",
+					"help": "Disallows Known and Unknown Synths to impregnate or be impregnated. Default : Disallows Known and Unknown Synths",
+					"valueOptions": {
+					"options": ["Allow", "Disallows Known Synths Only", "Disallows Known and Unknown Synths"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>Known Synths = A-2018, B-263, B2-57, Curie, Institute Courser, Eve, F6-33, G9-81, Glory, K1-98, Nick Valentine, Shaun, X4-18, X6-88, X9-27, XPN-20A, Y9-15, Z1-14, Z2-47, Z2-47, Z3-22, Z3-22, Z4K-97B, Z4K-97B, Synths, and Timothy.</font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='12'>Unknown Synths = Amelia Stockton, Art, Burner, Carol Janssen, Danse, Gabriel, Magnolia, McDonough, Roger Warwick, Sturges.</font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='8'>* The above option requires you to download 'Spell Perk Item Distributor' from Nexus Otherwise it will not work</font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fSynthHidden:Misc",
+					"text": "Allow Hidden Synths Settlers insemination",
+					"type": "stepper",
+					"help": "Allows insemination from Hidden Synths Settlers. Default : Disallow",
+					"valueOptions": {
+					"options": ["Allow", "Disallow"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Wasteland Offspring Additional Options",
+					"help": "These settings only matter if Wasteland Offspring(from Wasteland Dairy Framework) is installed (Recommended)",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fCreature_Faction:Creature",
+					"text": "Creature Faction (Work in Progress)",
+					"type": "stepper",
+					"help": "Marks you as friendly if impregnated by them. Stays until Birth Unless Forever is selected Default : OFF",
+					"valueOptions": {
+					"options": ["OFF", "Until Birth - Tainted", "Until Birth - Friendly", "Forever - Tainted", "Forever - Friendly"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>Please Note that the Creature Faction Option does work but other factions may attack you for being aligned with creature faction.</font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fCreature_DNA:Creature",
+					"text": "Removes Creature DNA after Sex",
+					"type": "switcher",
+					"help": "Removes Creature DNA after Sex. (via Impregnation or Condom) Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>Please Note that the Synth Option also apply to Wasteland Offspring but they can have a human option as well.</font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fAllowNonNPC:Misc",
+					"text": "Allow Creatures",
+					"type": "stepper",
+					"help": "Allows determines potential insemination from anything other than Humans or Ghouls.  Default: Partial",
+					"valueOptions": {
+					"options": ["OFF", "Partial", "Full"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCreature_Chances_Toggle:Chances",
+					"text": "Allow Creatures to use their own Chances",
+					"type": "switcher",
+					"help": "When this setting is on, an Creature will use its own chance to impregnate. (Options in Wasteland Offspring) Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature Pregnancy Length Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='16'> Off = No sex effects. \n Partial = Every sex effect except insemination. \n Full = Every sex effect including insemination.</font>",
+					"html": true,
+					"type": "text"
+				}
+				
+			]
+		},
+		{
+			"pageDisplayName": "Limit Options",
+			"content": [
+				{
+					"text": "How Many Pregnancies are Allowed",
+					"help": "This is still in experimental stages with the new Alpha releases",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fBirthLimit:Limits",
+					"text": "Limit Pregnancies",
+					"type": "switcher",
+					"help": "Toggle if there is a limit to Pregnancies. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTotal_Births:Limits",
+					"text": "Total Number of NPC Pregnancies for all",
+					"type": "slider",
+					"help": "Total Number of NPC Pregnancies. Default : 100 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 250,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTotal_Births_Player:Limits",
+					"text": "Total Number of Player Pregnancies",
+					"type": "slider",
+					"help": "Total Number of Player Pregnancies. Default : 25 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 250,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTotal_Freeze:Limits",
+					"text": "Type of Limit Freeze",
+					"type": "stepper",
+					"help": "Toggles between freezing at Nothing, Birth(Forever Pregnancy), No Baby, Surrogacy(keeps going but no Baby), and Nongrowing Baby. Default: Nothing",
+					"valueOptions": {
+					"options": ["Nothing", "Birth(Forever Pregnancy)", "No Baby", "Surrogacy(keeps going but no Baby)", "Nongrowing Baby"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'> 1. Freezing at Birth(Forever Pregnancy)\n 2. No Baby perk (gives No Baby or Infanticide or Mutated Reproduction or Phantom Pregnancy)\n 3. Both(Forever Pregnancies for already pregnant NPCs and no Pregnancies for Others)\n 4. Surrogacy(keeps going but no Baby)\n 5. Non Growing Baby (gives a Non Growing Baby to grow up later)</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='12'> If you decide to turn limits off after using it for a while, please use some of the debug functions to resume Player or NPC Birth.</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='12'> It is recommended to make this choice early on as changing these settings can have adverse effects.</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Commands to reset birth numbers",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Reset Current Births for world",
+					"type": "button",
+					"help": "Reset Current Births for world",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "Reset_Current_Births"
+					}
+				},
+				{
+					"text": "Reset Current Births for Player",
+					"type": "button",
+					"help": "Reset Current Births for Player",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "Reset_Current_Births_Player"
+					}
+				},
+				{
+					"text": "<font size='16'> Debug Commands will still work if Limit is reached.</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				}
+				
+			]
+		},
+		{
+			"pageDisplayName": "Body Options",
+			"content": [
+				{
+					"text": "Random Morphs",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fRandomMorphs:Misc",
+					"text": "Random Pregnancy Morphs",
+					"type": "stepper",
+					"help": "Select if pregnancy Morphs are random - On, Off, Actor Based. Default : On",
+					"valueOptions": {
+					"options": ["On", "Off", "Actor Based"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Female Body Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fBodyType_CBBE:Misc",
+					"text": "CBBE Body Type",
+					"type": "stepper",
+					"help": "Select the CBBE body type you are using - CBBE, CBBE (WeightGain), CBBE (Pregnant Belly Only)",
+					"valueOptions": {
+					"options": ["CBBE","CBBE (WeightGain)","CBBE (Pregnant Belly Only)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBodyType_FG:Misc",
+					"text": "Fusion Girl Body Type",
+					"type": "stepper",
+					"help": "Select the Fusion Girl body type you are using - Fusion Girl, Fusion Girl (StaticPhobia), Fusion Girl (Pregnant Belly Only)",
+					"valueOptions": {
+					"options": ["Fusion Girl", "Fusion Girl (StaticPhobia)","Fusion Girl (Pregnant Belly Only)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='16'> AAF FPE supports CBBE, Fusion Girl, and JaneBod female bodies. \n You must have the specified body installed, with morphs built, for FPE pregnancy morphs to work. \n Clothes must also have been built with morphs enabled in order for morphs to work on them. \n </font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Male Body Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMaleBodyType:Misc",
+					"text": "Enable MPreg morph support",
+					"type": "switcher",
+					"help": "Select whether or not to use the MPreg morph. Only enable this if your male body has an MPreg slider in BodySlide.",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='16'> By default, pregnant males will gain weight each month. \n AAF FPE also supports the MPreg morph add-on for Atomic Muscle and Body Talk 3. \n If you have built your male body with the MPreg morph and enable MPreg morph support, pregnant males will have a growing belly instead of gaining weight.</font>",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Chance Options",
+			"content": [
+				{
+					"text": "Chance Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='16'> Chances control how both NPCs and Player get pregnant. \n Please see the considerations section if you are using other mods that leverage AAF.</font>",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fChance:Chances",
+					"text": "Base Percent Chance",
+					"type": "slider",
+					"help": "Base chance for pregnancy. Gets modified by following values in the order they appear here: Fertile Effects, Contraception Effects. Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChance_Player_M:Chances",
+					"text": "Giver(Male) Player Percent Chance",
+					"type": "slider",
+					"help": "Giver(Male) Player chances for pregnancy. Gets modified by following values in the order they appear here: Fertile Effects, Contraception Effects. Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChance_Player_F:Chances",
+					"text": "Receiver(Female) Player Percent Chance",
+					"type": "slider",
+					"help": "Receiver(Female) Player chances for pregnancy. Gets modified by following values in the order they appear here: Fertile Effects, Contraception Effects. Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChance_Ghoul:Chances",
+					"text": "Ghoul Percent Chance",
+					"type": "slider",
+					"help": "Base chance for Ghoul pregnancy. Gets modified by following values in the order they appear here: Fertile Effects, Contraception Effects. Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChanceIVF:Chances",
+					"text": "Base Percent Chance of IVF",
+					"type": "slider",
+					"help": "Base chance for IVF pregnancy. Gets modified by following values in the order they appear here: Fertile Effects, Contraception Effects. Default : 3 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fContra:Chances",
+					"text": "Contraception Reduction Effect",
+					"type": "slider",
+					"help": "The percentage contraception reduces from the modified pregnancy chance. Default : 90 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNPCContra:Chances",
+					"text": "NPC Contraception Percent Chance",
+					"type": "slider",
+					"help": "Chance that when NPCs have sex, they use contraceptives. Default : 30",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMultiChance:Chances",
+					"text": "Multiple Children Percent Chance",
+					"type": "slider",
+					"help": "Chance that mothers will birth more than one child. After 2 children, chances for more decrease. Default : 15 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChance_Gender:Chances",
+					"text": "Gender Percent Chance (Male 0%------------------------100% Female)",
+					"type": "slider",
+					"help": "The Chances for a gender to be selected at Birth(in Wasteland Offspring) or Growth(Default). Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChance_Viable:Chances",
+					"text": "Viablity Percent Chance (Dead 0%------------------------100% Alive)",
+					"type": "slider",
+					"help": "Allow human babies to survive being borned. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDeadbaby_Length:Chances",
+					"text": "Stillborn Grief Perk Length",
+					"type": "slider",
+					"help": "Length of Stillborn Grief Perks in days. Default : 3 Days.",
+					"valueOptions": {
+					"min": 0,
+					"max": 30,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Fertility/Infertility Options",
+			"content": [
+				{
+					"text": "Fertility Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fFertile_Toggle:Chances",
+					"text": "Toggle Fertility",
+					"type": "stepper",
+					"help": "Select if Fertility is On and which mode it is set to. (Disabled, Magic Effects, and Perk) Default : Perk",
+					"valueOptions": {
+					"options": ["Disabled", "Perk", "Magic Effects"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFertile:Chances",
+					"text": "Fertile Percent Chance",
+					"type": "slider",
+					"help": "Chance for your character to wake up fertile/virile. If you are female and Female to Female impregnation is turned on, you will see be Fertile and Virile.  Default : 10 (Recommended)",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFertileEffects:Chances",
+					"text": "Fertile Multiplier Effect",
+					"type": "slider",
+					"help": "The amount to multiply the base chance of pregnancy when fertile/virile. Default : 10 (Recommended)",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 100.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFertile_Length:Chances",
+					"text": "Fertile Perk Length",
+					"type": "slider",
+					"help": "Length of Fertility Perk in days. Default : 3 Days.",
+					"valueOptions": {
+					"min": 0,
+					"max": 30,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllowFertileNPC:Chances",
+					"text": "Allow NPCs to be Fertile/Virile",
+					"type": "switcher",
+					"help": "When this setting is on, an NPC has the chance to be fertile/virile when loaded into the FPE system. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFertileNPC:Chances",
+					"text": "NPC Fertile Chance Modifier",
+					"type": "slider",
+					"help": "NPCs chance of being fertile is the Fertile Percent Chance multiplied by this setting's value. Default : 0.5 (Half the chance as the player) (Recommended)",
+					"valueOptions": {
+					"min": 0.1,
+					"max": 10,
+					"step": 0.1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Infertility Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fInfertile_Toggle:Chances",
+					"text": "Toggle Infertility",
+					"type": "stepper",
+					"help": "Select if Infertility is On and which mode it is set to. (Disabled, Infertile, and Normal) Default : Perk",
+					"valueOptions": {
+					"options": ["Disabled", "Infertile", "Normal"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fInfertile_Length:Chances",
+					"text": "Infertile Perk Length",
+					"type": "slider",
+					"help": "Length of Infertility Perks in days. Default : 3 Days.",
+					"valueOptions": {
+					"min": 0,
+					"max": 30,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSterile:Misc",
+					"text": "Toggle Sterility",
+					"type": "switcher",
+					"help": "if you want Sterility, which causes no pregnancies on affected NPC. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'> Disabled = Infertility is Disabled. \n Infertile = Pregnancy chances is Decreased \n Normal = Normal Pregnancy Chances. (This will negate getting fertile for a length of time) \n Please Note, this option is designed for Infertility drug use and the after effects to PostPartum and Fertility.</font>",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Baby Options Page 1",
+			"content": [
+				{
+					"text": "Baby Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fBabyToChild:Baby",
+					"text": "Human Baby to Child Growth Time (FPE Months)",
+					"type": "slider",
+					"help": "How long it takes for a Human baby to grow into a child, in FPE months. Automatically affects currently alive babies. Default : 36 FP Months",
+					"valueOptions": {
+					"min": 1,
+					"max": 60,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBabyToChild_Ghoul:Baby",
+					"text": "Ghoul Baby to Child Growth Time (FPE Months)",
+					"type": "slider",
+					"help": "How long it takes for a Ghoul baby to grow into a child, in FPE months. Automatically affects currently alive babies. Default : 36 FP Months",
+					"valueOptions": {
+					"min": 1,
+					"max": 60,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature Baby to Child Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fMultiMax:Baby",
+					"text": "Max Possible Babies Per Pregnancy",
+					"type": "slider",
+					"help": "The max amount of babies a pregnant person can birth. Default: 3 (Recommended)",
+					"valueOptions": {
+					"min": 1,
+					"max": 5,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBabyHealth:Baby",
+					"text": "Baby Health",
+					"type": "switcher",
+					"help": "Baby's health and radiation is tracked. Doing chems, drinking, getting hit in combat, eating or taking rads in all affect your baby.\nStimpaks and Radaway and doctors can heal the damage, and health recovers over time naturally. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fGhoulifyChildren:Baby",
+					"text": "Ghoulify Children",
+					"type": "switcher",
+					"help": "If the rads accumulated are equal to or greater than 400, the child with be a ghoul. If the father of the child is a ghoul, the child will also be a ghoul. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Baby Holding Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fBaby_Holding:Baby",
+					"text": "Advanced Baby Holding Options",
+					"type": "stepper",
+					"help": "When a baby is  born, found or picked up, what else happens. Note: Wearable babies can be modded at an armour workbench. Default : Adds Wearable Baby",
+					"valueOptions": {
+					"options": ["MISC Baby Only", "Adds Wearable Baby", "Adds and Equips Wearable Baby (Not to Player)", "Adds and Equips Wearable Baby (to Player as well)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Racial Baby Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fRacialBaby_chance:Baby",
+					"text": "Chances for Racial Baby",
+					"type": "slider",
+					"help": "The Chances a Father with a specific racial perk that they will father a selected racial baby. Default : 50",
+					"valueOptions": {
+					"min": 1,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMothersDNA_chance:Baby",
+					"text": "Chances for Mothers DNA (for human to human only)",
+					"type": "slider",
+					"help": "The Chances for the mother to use Racial perks. Default : 50",
+					"valueOptions": {
+					"min": 1,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Racial Baby Commands",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='12'> Choose the race of a particular actor (White, Black, etc...) to allow particular children to be born \n So the following commands adds a perk to the Player or NPC.\n There is no special abilities given to each Race Perk. (In fact the Perk is simply a visible Way to keep track)</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Asian Race Perk",
+					"type": "button",
+					"help": "This Adds a Asian Race Perk to a NPC or Player. (and Remove other Racial Perks)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9CC",
+					"function": "GiveNPCUnderCrosshairs_Racial_Asian"
+					}
+				},
+				{
+					"text": "Black Race Perk",
+					"type": "button",
+					"help": "This Adds a Black Race Perk to a NPC or Player. (and Remove other Racial Perks)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9CC",
+					"function": "GiveNPCUnderCrosshairs_Racial_Black"
+					}
+				},
+				{
+					"text": "Hispanic Race Perk",
+					"type": "button",
+					"help": "This Adds a Hispanic Race Perk to a NPC or Player. (and Remove other Racial Perks)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9CC",
+					"function": "GiveNPCUnderCrosshairs_Racial_Hispanic"
+					}
+				},
+				{
+					"text": "White Race Perk",
+					"type": "button",
+					"help": "This Adds a White Race Perk to a NPC or Player. (and Remove other Racial Perks)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9CC",
+					"function": "GiveNPCUnderCrosshairs_Racial_White"
+					}
+				},
+				{
+					"text": "Race Perk Reset",
+					"type": "button",
+					"help": "This Resets The Race Perk for a NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9CC",
+					"function": "GiveNPCUnderCrosshairs_Racial_Reset"
+					}
+				},
+				{
+					"text": "<font size='10'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Baby Options Page 2",
+			"content": [
+				{
+					"text": "Allow growing of Babies",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='15'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Toggle Baby to be Growable",
+					"type": "button",
+					"help": "This Grows a Baby that is on a NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Baby_Growing"
+					}
+				},
+				{
+					"id": "GrowingBaby",
+					"text": "Toggle Baby to be Growable",
+					"type": "hotkey",
+					"help": "This Grows a Baby that is on a NPC or Player."
+				},
+				{
+					"text": "Toggle Baby to be Not Growable",
+					"type": "button",
+					"help": "This stops a Baby growing on a NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Baby_NotGrowing"
+					}
+				},
+				{
+					"id": "NonGrowingBaby",
+					"text": "Toggle Baby to be Not Growable",
+					"type": "hotkey",
+					"help": "This stops a Baby growing on a NPC or Player."
+				},
+				{
+					"text": "<font size='12'>This option is designed to stop rampant overpopulation of the commonwealth.</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='12'>you can change babies to growable version via the following command.</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fNonGrowingBaby_Player:NonGrowingBaby",
+					"text": "Select the outcome of Babies for the Player",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Normal Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Companion:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Companion NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Normal Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Settler:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Settler NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_BOS:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Brotherhood of Steel NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_DLC04_Slaves:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Captive NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_COA:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Children of Atom NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Gunner:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Gunner NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Institute:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Institute NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Institute_Synth:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Synth NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_MM:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Minutemen NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Raider:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Raider NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_RR:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Railroad NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_Vault81:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Vault 81 NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_DLC04_Disciples:NonGrowingBaby",
+					"text": "Select the outcome of Babies for DLC04 Disciple NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_DLC04_Operators:NonGrowingBaby",
+					"text": "Select the outcome of Babies for DLC04 Operator NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby_DLC04_Pack:NonGrowingBaby",
+					"text": "Select the outcome of Babies for DLC04 Pack NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNonGrowingBaby:NonGrowingBaby",
+					"text": "Select the outcome of Babies for Other Assorted NPCs",
+					"type": "stepper",
+					"help": "This changes Babies to be. Normal Babies, Non Growing Babies, Dead Babies, and No Babies. Default : Non Growing Babies",
+					"valueOptions": {
+					"options": ["Normal Babies","Non Growing Babies", "Dead Babies", "No Babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+				
+				
+			]
+		},
+		{
+			"pageDisplayName": "Children Options",
+			"content": [
+				{
+					"text": "Children Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fChildToAdult:Baby",
+					"text": "Child to Adult Growth Time (FPE Months)",
+					"type": "slider",
+					"help": "How long it takes for a child to grow into an adult, in FPE months. Will affect children while they're growing. Default : 24 FP Months",
+					"valueOptions": {
+					"min": 1,
+					"max": 180,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fChildToAdult_Ghoul:Baby",
+					"text": "Ghoul Child to Adult Growth Time (FPE Months)",
+					"type": "slider",
+					"help": "How long it takes for a Ghoul child to grow into an adult, in FPE months. Will affect children while they're growing. Default : 24 FP Months",
+					"valueOptions": {
+					"min": 1,
+					"max": 180,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature Child to Adult Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Children Outcome Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='12'> Stay = Children will stay in your Settlement \n Migrate = Children will Migrate away from your Settlement \n Butcher = Children will be Butchered when they grow up \n Cage = Children will be Caged when they grow up (Requires Wasteland Dairy)</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fReceiver:Outcome",
+					"text": "Receiver of Outcome",
+					"type": "stepper",
+					"help": "Toggle between Ground, Nearest Workshop or Player. Default : Workshop",
+					"valueOptions": {
+					"options": ["Ground", "Workshop", "Player"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fOutcome_Human:Outcome",
+					"text": "Outcome of Human Children",
+					"type": "stepper",
+					"help": "Toggle between Grow Up, Migrate, Butchered or Caged. Default : Grow Up",
+					"valueOptions": {
+					"options": ["Grow Up", "Migrate", "Butchered", "Caged"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fOutcome_NonHuman:Outcome",
+					"text": "Outcome of Non-Human Children",
+					"type": "stepper",
+					"help": "Toggle between Grow Up, Migrate, Butchered or Caged. Default : Grow Up",
+					"valueOptions": {
+					"options": ["Grow Up", "Migrate", "Butchered", "Caged"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fOutcome_Animal:Outcome",
+					"text": "Outcome of Animal Infants",
+					"type": "stepper",
+					"help": "Toggle between Grow Up, Migrate, Butchered or Caged. Default : Grow Up",
+					"valueOptions": {
+					"options": ["Grow Up", "Migrate", "Butchered", "Caged"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Commands and Hotkeys",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Selecting The Chosen Child to Stay in the Settlement",
+					"type": "button",
+					"help": "Selecting a Child to be Chosen to Stay in the Settlement.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA14",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				},
+				{
+					"id": "Chosen_Selector_Grow",
+					"text": "Selecting The Chosen Child to Stay in the Settlement Hotkey",
+					"type": "hotkey",
+					"help": "Selecting a Child to be Chosen to Stay in the Settlement."
+				},
+				{
+					"text": "Selecting The Chosen Child to Migrate",
+					"type": "button",
+					"help": "Selecting a Child to be Chosen to Migrate.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA2E",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				},
+				{
+					"id": "Chosen_Selector_Migrate",
+					"text": "Selecting The Chosen Child to Migrate Hotkey",
+					"type": "hotkey",
+					"help": "Selecting a Child to be Chosen to Migrate."
+				},
+				{
+					"text": "Selecting The Chosen Child to be Butchered",
+					"type": "button",
+					"help": "Selecting a Child to be Chosen to be Butchered.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA2F",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				},
+				{
+					"id": "Chosen_Selector_Butchered",
+					"text": "Selecting The Chosen Child to be Butchered Hotkey",
+					"type": "hotkey",
+					"help": "Selecting a Child to be Chosen to be Butchered."
+				},
+				{
+					"text": "Selecting The Chosen Child to be Caged",
+					"type": "button",
+					"help": "Selecting a Child to be Chosen to be Caged. (Requires Wasteland Dairy Framework)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA30",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				},
+				{
+					"id": "Chosen_Selector_Caged",
+					"text": "Selecting The Chosen Child to be Caged Hotkey",
+					"type": "hotkey",
+					"help": "Selecting a Child to be Chosen to be Caged. (Requires Wasteland Dairy Framework)"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Notification Options (Page 1)",
+			"content": [
+				{
+					"text": "Notification Options",
+					"help": "Too many notifications may not be seen as the queue may become sluggish depending on how many mods you have.",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fFNotif:Notifs",
+					"text": "Fertile/Virile Notifications",
+					"type": "switcher",
+					"help": "Notifications on when the player wakes up fertile/virile. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPOCNotif:Notifs",
+					"text": "Player-Only Conception Notifications",
+					"type": "switcher",
+					"help": "When this setting is on, FPE only shows the following two conception notification types when sex acts involve the player. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCCNotif:Notifs",
+					"text": "Conception Chances Notification",
+					"type": "switcher",
+					"help": "Notification that shows the chance of pregnancy. Doesn't show up when already pregnant. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCNotif:Notifs",
+					"text": "Conception Notifications",
+					"type": "switcher",
+					"help": "Notifications showing when someone has gotten pregnant. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMonthNotif:Notifs",
+					"text": "Monthly Notification Type Toggle",
+					"type": "stepper",
+					"help": "Toggle between Disabled, Notification, and Message Box. Default : Notification",
+					"valueOptions": {
+					"options": ["Disabled", "Notification", "Message Box"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBNotif:Notifs",
+					"text": "Birth Notification",
+					"type": "switcher",
+					"help": "Quest Notification that informs on who just gave birth in the world and where. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBGNotif:Notifs",
+					"text": "Baby Growth Notification",
+					"type": "switcher",
+					"help": "Notification that informs when a baby grows into a child in the world and where. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCGNotif:Notifs",
+					"text": "Child Growth Notification",
+					"type": "switcher",
+					"help": "Notification that informs when a child grows into an adult in the world and where. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCGNotif_Type:Notifs",
+					"text": "Child Growth Notification Type Toggle",
+					"type": "stepper",
+					"help": "Toggle between Notification, Message Box. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Notification Options (Page 2)",
+			"content": [
+				{
+					"text": "Impregnation Messages",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fImpregnation_Notif:Misc",
+					"text": "Impregnation Messages Toggle",
+					"type": "stepper",
+					"help": "If impregnation happens a somewhat humorous Message will pop up (Default Message, Joke Message or A Chance of Either Message). Default : Default Message",
+					"valueOptions": {
+					"options": ["Default Message", "Joke Message", "A Chance of Either Message"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageImpreg_Notif:Misc",
+					"text": "Impregnation Message Format",
+					"type": "stepper",
+					"help": "Toggle between Notification, Message Box or None. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box", "None"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageImpreg_Player:Misc",
+					"text": "Impregnation Message for NPCs",
+					"type": "stepper",
+					"help": "Toggle between None, Player involved Only or All. Default : All",
+					"valueOptions": {
+					"options": ["None", "Player involved Only", "All"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageImpreg_Notif_chance:Misc",
+					"text": "Impregnation Message Chances",
+					"type": "slider",
+					"help": "What is the chances for impregnation Messages occurring? Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Failing Impregnation messages",
+					"help": "These Messages are for when you have sex with a Synth or you are already pregnant.",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fNotif_Synth:Notifs",
+					"text": "Synth Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Synth Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_Ghoul:Notifs",
+					"text": "Ghoul Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Ghoul Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_Creature:Notifs",
+					"text": "Creature Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Creature Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_Pregnant:Notifs",
+					"text": "Pregnant Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Pregnant Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_Elderly:Notifs",
+					"text": "Elderly Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Elderly Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_PostPartum:Notifs",
+					"text": "PostPartum Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing PostPartum Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_Sterile:Notifs",
+					"text": "Sterile Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Sterile Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fNotif_Pipboy:Notifs",
+					"text": "Pipboy Impregnation Messages",
+					"type": "stepper",
+					"help": "Notifications on failing Pipboy Impregnations. Default : Enabled within a Distance of Player",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled within a Distance of Player", "Enabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Debug messages",
+					"help": "These Messages are for Debugging (Located in Papyrus Log).",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='10'> Navigate to C:\Users\YOURUSERIDHERE\Documents\My Games\Fallout4\Fallout4.ini \n Open it, and copy and paste the following to the bottom of the textfile \n [Papyrus] \n fPostLoadUpdateTimeMS=500.0 \n bEnableLogging=1 \n bEnableTrace=1 \n bLoadDebugInformation=1 \n (logs are stored in C:\Users\YOURUSERIDHERE\Documents\My Games\Fallout4\Logs\Script) </font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fDebug_Sex:Notifs",
+					"text": "Sex Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Sex Activities. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_Impregnation:Notifs",
+					"text": "Impregnation Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Impregnation. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_Pregnancy:Notifs",
+					"text": "Pregnancy Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Pregnancy. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_Birth:Notifs",
+					"text": "Birth Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Birth. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_Breeder:Notifs",
+					"text": "Breeder Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Breeder. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_Pregnancy_Distr:Notifs",
+					"text": "Pregnancy Distributor Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Pregnancy Distributor. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_STDs:Notifs",
+					"text": "STDs Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for STDs. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDebug_Traits:Notifs",
+					"text": "Traits Debugging Messages",
+					"type": "stepper",
+					"help": "Papyrus Logs for Traits. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable", "Enable with Notifications"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Notification Options (Page 3)",
+			"content": [
+				{
+					"text": "Roleplaying Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMessageRoleplay:Misc",
+					"text": "Player Based Roleplaying",
+					"type": "stepper",
+					"help": "Changes Player based Messages based on type of Roleplaying (Default(you are Nate or Nora), Alt Start(you are NOT Nate or Nora), Raider, Enclave, Brotherhood of Steel, and Swinger). Default : Default",
+					"valueOptions": {
+					"options": ["Default(Nate or Nora)", "Alt Start", "Raider", "Enclave", "Brotherhood of Steel", "Swinger"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "AAF Sex Messages",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='12'> Sex Messages = Messages at the end of a Sex Scene. \n Sex Movement = Messages during a change of a Sex Scene (Notification's only)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fMessageSex_Notif:Misc",
+					"text": "Sex Message Format",
+					"type": "stepper",
+					"help": "Toggle between Notification, Message Box or None. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box", "None"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageSex_Notif_chance:Misc",
+					"text": "Sex Message Chances",
+					"type": "slider",
+					"help": "What is the Chances for Sex Messages Occurring. Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageSex_Player:Misc",
+					"text": "Sex Message(and Movement) for NPCs",
+					"type": "stepper",
+					"help": "Toggle between None, Player Involved Only or All. Default : All",
+					"valueOptions": {
+					"options": ["None", "Player Involved Only", "All"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageSexMove_Notif_chance:Misc",
+					"text": "Sex Movement Message Chances",
+					"type": "slider",
+					"help": "What is the chances for Sex Movement Messages occurring? Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Birth Messages",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMessageBirth_Notif:Misc",
+					"text": "Birth Message Type Toggle",
+					"type": "stepper",
+					"help": "Toggle between Notification, Message Box or None. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box", "None"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMessageBirth_Notif_chance:Misc",
+					"text": "Birth Message Chances",
+					"type": "slider",
+					"help": "What is the Chances for birth messages occurring? Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Cumflation Options",
+			"content": [
+				{
+					"text": "Cumflation",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fCumflation_toggle:Cumflation",
+					"text": "Cumflation Toggle",
+					"type": "switcher",
+					"help": "If Cumflation Activates. Default : On",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBodyType_CBBE_CF:Cumflation",
+					"text": "CBBE Body Type",
+					"type": "stepper",
+					"help": "Select the CBBE Slider you want for cumflation - Big Belly, Pregnancy Belly, and Belly. Default : Big Belly",
+					"valueOptions": {
+					"options": ["Big Belly","Pregnancy Belly","Belly"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBodyType_FG_CF:Cumflation",
+					"text": "Fusion Girl Body Type",
+					"type": "stepper",
+					"help": "Select the Fusion Girl Slider you want for cumflation - Big Belly(Stomach Fat), Pregnant Belly(Maternity), and Belly Size(Stomach). Default : Big Belly(Stomach Fat)",
+					"valueOptions": {
+					"options": ["Big Belly(Stomach Fat)", "Pregnant Belly(Maternity)","Belly Size(Stomach)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_FemaletoFemale:Cumflation",
+					"text": "Female to Female Toggle",
+					"type": "switcher",
+					"help": "Toggles if Female(M) to Female(F) can cause cumflation to Female(F). Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_chance:Cumflation",
+					"text": "Cumflation Chances",
+					"type": "slider",
+					"help": "What is the chances for Cumflation occurring? Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_power:Cumflation",
+					"text": "Cumflation Power",
+					"type": "slider",
+					"help": "How powerful is Cumflation. Default : 1.0 (Recommended)",
+					"valueOptions": {
+					"min": 0.1,
+					"max": 2.0,
+					"step": 0.1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_time:Cumflation",
+					"text": "Cumflation Time",
+					"type": "slider",
+					"help": "How Long Does Cumflation Last. Default : 1.0",
+					"valueOptions": {
+					"min": 0.1,
+					"max": 2.0,
+					"step": 0.1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_time_Refresh:Cumflation",
+					"text": "Cumflation Morphing Time",
+					"type": "slider",
+					"help": "How Long Does Morphing take. Default : 60",
+					"valueOptions": {
+					"min": 10,
+					"max": 240,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_Notif:Cumflation",
+					"text": "Cumflation Messages Toggle",
+					"type": "switcher",
+					"help": "Joke Messages Appear if a person is cumflated. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_Notif_chance:Cumflation",
+					"text": "Cumflation Messages Chances",
+					"type": "slider",
+					"help": "What is the chances for Cumflation Messages occurring? Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fCumflation_Male:Cumflation",
+					"text": "Are Males allowed to be Cumflated",
+					"type": "switcher",
+					"help": "Toggles if Males can be allowed to be cumflated. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature Cumflation Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "IVF Cumflation",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fCumflation_toggle_IVF:Cumflation",
+					"text": "Cumflation in IVF Toggle",
+					"type": "switcher",
+					"help": "If Cumflation Activates when IVF is used. Default : On",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMorph_Human_Cumflation:Cumflation",
+					"text": "Human IVF Strength",
+					"type": "stepper",
+					"help": "Belly size modifier for This Creatures pregnancies, applies as a modifier to base Morph Power Default : Low Cumflation",
+					"valueOptions": {
+					"options": ["No Cumflation", "Little Cumflation", "Medium Cumflation", "High Cumflation"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMorph_Ghoul_Cumflation:Cumflation",
+					"text": "Ghoul IVF Strength",
+					"type": "stepper",
+					"help": "Belly size modifier for This Creatures pregnancies, applies as a modifier to base Morph Power Default : Low Cumflation",
+					"valueOptions": {
+					"options": ["No Cumflation", "Little Cumflation", "Medium Cumflation", "High Cumflation"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='14'>*Creature IVF Cumflation Options is in the Wasteland Offspring MCM</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Debug Cumflation",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Fix Cumflation",
+					"type": "button",
+					"help": "This Fixes(Removes) Cumflation from the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_FixCumflation"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "STD Options",
+			"content": [
+				{
+					"text": "Sexually Transmitted Disease Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fInfect:Misc",
+					"text": "STDs",
+					"type": "switcher",
+					"help": "Allow NPCs to be Infected with STDs. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fInfect_Chance:Misc",
+					"text": "STDs Chances",
+					"type": "slider",
+					"help": "Chances of NPCs to be Infected with STDs. Default : 25",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 100.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fInfect_Chance_new:Misc",
+					"text": "STD Chance of making a new disease",
+					"type": "slider",
+					"help": "Chances of NPCs to create STDs. Default : 2",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 100.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fInfect_Strength:Misc",
+					"text": "STDs Strength",
+					"type": "stepper",
+					"help": "If STDs is Active, this increases the strength of a STD on a NPC (0X, 1X, and 2X). Default : 1X",
+					"valueOptions": {
+					"options": ["0X", "1X", "2X"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fInfect_Message:Misc",
+					"text": "STDs Messages",
+					"type": "stepper",
+					"help": "If STDs is Active, This will show a message if toggled (Disabled, Player, Player and NPCs). Default : Player",
+					"valueOptions": {
+					"options": ["Disabled", "Player", "Player and NPCs"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Breeder Virus Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fBreeder_Fertile:Breeder",
+					"text": "Breeder Fertility",
+					"type": "switcher",
+					"help": "Allow NPCs to be Infected with Breeder Virus to be Endlessly Fertile. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreeder_Grow:Breeder",
+					"text": "Breeder Enhanced Growing",
+					"type": "switcher",
+					"help": "Allow NPCs to be Infected with Breeder Virus to have enhanced Pregnancy Growth. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTime_Breeder:Preg_Perks",
+					"text": "Time Between Refreshes (Breeder)",
+					"type": "slider",
+					"help": "How many Hours between Refreshes for Breeder Virus Victims, (this won't speed up pregnancies) Default : 12 (Recommended)",
+					"valueOptions": {
+					"min": 1,
+					"max": 12,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>for example, you can turn on the pregnancy growth and speed up the refresh to 6 hours to have a smoother pregnancy (no jarring belly jumps)</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fBreeder_Viable:Breeder",
+					"text": "Breeder Enhanced Viablity",
+					"type": "slider",
+					"help": "Allow NPCs to be Infected with Breeder Virus to have Enhanced Viablity. Default : 5",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 10.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Sexual Counter",
+			"content": [
+				{
+					"text": "<font size='14'>I am changing this system to be random because I had already broke it because of Existence and the Fake Sexual Diary</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fCounter_SexHuman_Player_Choice:Counter",
+					"text": "Unique Player Perk Name Choice",
+					"type": "stepper",
+					"help": "What is the Name of the above Perk (Sexually Active Adult, Player, Swinger, Slut, Playboy, Playgirl, Man-Whore, Whore, Village Milkman, and Village Bicycle). Default : Player",
+					"valueOptions": {
+					"options": ["Sexually Active Adult", "Player", "Swinger", "Slut", "Playboy", "Playgirl", "Man-Whore", "Whore", "Village Milkman", "Village Bicycle"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Commands",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Sex Counter",
+					"type": "button",
+					"help": "This counts the Sex scenes for Actor.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Counter_Sex"
+					}
+				},
+				{
+					"text": "Births Counter",
+					"type": "button",
+					"help": "This counts the Births for Actor.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Counter_Births"
+					}
+				},
+				{
+					"text": "Misc Sex Counter",
+					"type": "button",
+					"help": "This counts the Misc Sex for Actor.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Counter_Misc"
+					}
+				},
+				{
+					"text": "Allow Fake statistics for Existence<",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fFakeAV:Misc",
+					"text": "Fake statistics",
+					"type": "switcher",
+					"help": "Enabling this will add fake sexual statistics to each and every NPC. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fFakeAV:Misc",
+					"text": "Fake statistics",
+					"type": "stepper",
+					"help": "Enabling this will add fake sexual statistics to each and every NPC and Player(which different Options). Default : ON",
+					"valueOptions": {
+					"options": ["Disable", "NPC Only", "NPC and Player(Not Experienced)", "NPC and Player(Experienced)", "NPC and Player(Very Experienced)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<p align='center'><font size='14'>You can read these statistics when you use the Sexual Diary(or the MCM Counter Commands) on them.</font></p>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Romance Options",
+			"content": [
+				{
+					"text": "Romance Option",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fTraits_Drugs:Traits",
+					"text": "Romance Traits Drugs",
+					"type": "switcher",
+					"help": "Allow NPCs to get Drug Related Romance Traits Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'> Drug Traits \n Junkie = Loves Drugs \n Teetotaler = Hates Drugs</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fTraits_Gifts:Traits",
+					"text": "Romance Traits Gifts",
+					"type": "switcher",
+					"help": "Allow NPCs to get Gift Related Romance Traits Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'> Gift Traits \n Gold Digger = Loves Presents \n Frugal = Hates Presents \n Glutton = Loves Food \n Bland Palate = Hates Food \n Bullet Junkie = Love Guns \n Cautious Gun Owner = Hates Guns \n Fashionista = Love Clothes \n Fashion Failure = Hates Clothes \n Sexually Brave about toys \n Sexually Shy about toys</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fTraits_Sexually:Traits",
+					"text": "Romance Traits Sexually",
+					"type": "stepper",
+					"help": "Allow NPCs to get Sexually Related Romance Traits. Default : Majority Normal",
+					"valueOptions": {
+					"options": ["OFF", "Majority Normal", "Majority Sexually", "Majority Active"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>Majority Normal = Out of 25 Chances. Shy = 1 Chance, Sexually = 6 Chances, Active = 3 Chances and Normal = 15 Chances</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='12'>Majority Sexually = Out of 25 Chances. Shy = 1 Chance, Normal = 6 Chances, Active = 3 Chances and Sexually = 15 Chances</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='12'>Majority Active = Out of 25 Chances. Shy = 1 Chance, Normal = 6 Chances, Sexually = 3 Chances and Active = 15 Chances</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='10'> Sexual Traits \n Normal = Likes Sex but Doesn't really care about it. \n Active = Enjoys Sex and does like more. \n Sexually = Loves Sex and they are close to being a sex addict. \n Shy = Doesn't really like Sex that much.</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Romance Debug",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='15'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Romance_Display",
+					"type": "button",
+					"help": "This displays the Romance Display window for NPC.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Romance"
+					}
+				},
+				{
+					"id": "Romance_Display_H",
+					"text": "Romance Display (Hotkey)",
+					"type": "hotkey",
+					"help": "This displays the Romance Display window for NPC."
+				},
+				{
+					"text": "<font size='12'> Romance Cheat Debugs</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Romance_Reset",
+					"type": "button",
+					"help": "This Reset the Romance totals for NPC.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Romance_Reset"
+					}
+				},
+				{
+					"id": "Romance_Reset_H",
+					"text": "Romance Reset (Hotkey)",
+					"type": "hotkey",
+					"help": "This Reset the Romance totals for NPC."
+				},
+				{
+					"text": "Romance_One",
+					"type": "button",
+					"help": "This sets the Romance totals for NPC to one.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Romance_one"
+					}
+				},
+				{
+					"id": "Romance_One_H",
+					"text": "Romance Set to one (Hotkey)",
+					"type": "hotkey",
+					"help": "This sets the Romance totals for NPC to one."
+				}
+				
+			]
+		},
+		{
+			"pageDisplayName": "Marriage Options (Page 1)",
+			"content": [
+				{
+					"text": "Marriage Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMarriage_NPC:Marriage",
+					"text": "Enable Perk Based Marriages",
+					"type": "switcher",
+					"help": "Select whether or not to that you require Companion perks to get them to Married you. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMarriage_chance:Marriage",
+					"text": "Marriage Chances",
+					"type": "slider",
+					"help": "What is the Chances for Marriage occurring. Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Romance Points",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMarriageSex_Total:Marriage",
+					"text": "Points to Marriage",
+					"type": "slider",
+					"help": "How Many Points to allow Marriage. Default : 300",
+					"valueOptions": {
+					"min": 30.0,
+					"max": 600.0,
+					"step": 30.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='16'> You can give gifts(Use Presents in front of NPC) to your romance partner to gain some points in an Area.\n There is three Romance Sections.\n 1.Sex Points (have sex or give sexual Gifts) \n 2. Gift Points (give gifts to your partner) \n 3. Drug Points (give drug boxes to NPC).</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Marriage Messages",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMessageMarriage_Notif:Marriage",
+					"text": "Marriage Message Type Toggle",
+					"type": "stepper",
+					"help": "Toggle between Notification, Message Box or None. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box", "None"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Polygamy Marriage",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMarriage_Poly:Marriage",
+					"text": "Allow Polygamy Marriage",
+					"type": "switcher",
+					"help": "Allows you to marry multiple NPCs Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMarriage_AnimeIsekai:Marriage",
+					"text": "Enhanced Marriage Benefits",
+					"type": "stepper",
+					"help": "Allows Enhanced Marriage Benefits for the Player and NPCs. Toggle between OFF, Powerful, and Overpowered Default : OFF",
+					"valueOptions": {
+					"options": ["OFF", "Powerful", "Overpowered"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Marriage Options (Page 2)",
+			"content": [
+				{
+					"text": "Gift Delays",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fDelay_Drug:Marriage",
+					"text": "Length of Drug Delay",
+					"type": "slider",
+					"help": "How Long between Gifts of Drugs Default : 24",
+					"valueOptions": {
+					"min": 0,
+					"max": 48,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDelay_Gift:Marriage",
+					"text": "Length of Gift Delay",
+					"type": "slider",
+					"help": "How Long between Gifts Default : 24",
+					"valueOptions": {
+					"min": 0,
+					"max": 48,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fDelay_Sex:Marriage",
+					"text": "Length of Sex Delay",
+					"type": "slider",
+					"help": "How Long between Gift of Sex Default : 24",
+					"valueOptions": {
+					"min": 0,
+					"max": 48,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Gift Rewarded Sex",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fGiftSex_Chances:Marriage",
+					"text": "Chances of Gift Rewarded Sex",
+					"type": "slider",
+					"help": "What is the Chances for Gift Rewarded Sex occurring? Default : 25",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fGiftSex_Duration:Marriage",
+					"text": "Duration of Gift Rewarded Sex",
+					"type": "slider",
+					"help": "Select how long Gift Rewarded Sex is. Default : 60",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 300.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Honeymoon",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fHoneynoon:Marriage",
+					"text": "Sex During Honeymoon",
+					"type": "switcher",
+					"help": "Select if you have Sex in the Honeymoon. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fHoneynoon_Duration:Marriage",
+					"text": "Duration of Honeymoon Sex",
+					"type": "slider",
+					"help": "Select how long Honeymoon Sex is. Default : 60",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 300.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Marital Sex and Commands",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fMarriageSex_Duration:Marriage",
+					"text": "Duration of Marital Sex",
+					"type": "slider",
+					"help": "Select how long Marital Sex is. Default : 60",
+					"valueOptions": {
+					"min": 1.0,
+					"max": 300.0,
+					"step": 1.0,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fMarriageSex_Chances:Marriage",
+					"text": "Chances of Marital Sex",
+					"type": "slider",
+					"help": "What is the Chances for Marital Sex occurring? Default : 75",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "Making_Love",
+					"text": "Making Love with Marriage Partner",
+					"type": "hotkey",
+					"help": "Making Love with Marriage Partner."
+				},
+				{
+					"text": "Making Love",
+					"type": "button",
+					"help": "Making Love with Marriage Partner.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA0A",
+					"function": "GiveNPCUnderCrosshairs_Married"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Perk Options",
+			"content": [
+				{
+					"text": "Sex Addiction",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fAddictionSex_Toggle:Addict",
+					"text": "Sex Addiction Toggle",
+					"type": "stepper",
+					"help": "Toggles if Sex can cause Addictions to the Player. Disables, Enabled (no Effects), and Enabled (with Effects). Default : Enabled (no Effects)",
+					"valueOptions": {
+					"options": ["Disabled", "Enabled (no Effects)", "Enabled (with Effects)"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAddictionSex_Chance:Addict",
+					"text": "Chances for Sex Addiction",
+					"type": "slider",
+					"help": "The Chances for the Sex Addiction to occur. Default : 10",
+					"valueOptions": {
+					"min": 1,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAddictionSex_Length:Addict",
+					"text": "Length for Sex Addiction",
+					"type": "slider",
+					"help": "The Length for the Sex Addiction in Days. Default : 3",
+					"valueOptions": {
+					"min": 1,
+					"max": 10,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAddictionSex_Messages:Addict",
+					"text": "Sex Addiction Message Toggle",
+					"type": "switcher",
+					"help": "Toggles Messages to show up if the Player has a Sex Addiction. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Perk Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPerks_Father:Preg_Perks",
+					"text": "Father Perk Toggle",
+					"type": "switcher",
+					"help": "If Father Perks are Active. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPerks_Father_Enable:Preg_Perks",
+					"text": "Father Perk Effect",
+					"type": "stepper",
+					"help": "If Father Perks has an effect on The Player and NPCs, this increases the strength of a Father Perk on a NPC (0X, 1X, and 2X). Default : 1X",
+					"valueOptions": {
+					"options": ["0X", "1X", "2X"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPerks_Harem:Preg_Perks",
+					"text": "Harem Perk Toggle",
+					"type": "switcher",
+					"help": "If Harem Perks are Active. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPerks_Harem_Enable:Preg_Perks",
+					"text": "Harem Perk Effect",
+					"type": "stepper",
+					"help": "If Harem Perks has an effect on The Player and NPCs, this increases the strength of a Harem Perk on a NPC (0X, 1X, and 2X). Default : 1X",
+					"valueOptions": {
+					"options": ["0X", "1X", "2X"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPerks_Monthly:Preg_Perks",
+					"text": "Monthly Perk Toggle",
+					"type": "stepper",
+					"help": "If Monthly Perks are Active and if they are Negative(Removes Action Points and Carry Weight) or Positive(adds Action Points and Carry Weight) or is disabled. Default : Negative",
+					"valueOptions": {
+					"options": ["Disable", "Negative effects", "Positive effects"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPerks_Monthly_Enable:Preg_Perks",
+					"text": "Monthly Perk Effect",
+					"type": "stepper",
+					"help": "If Monthly Perks is Active, then for every month pregnant, it decreases(or increases) 0(0X) or 5(1X) or 10(2X) points from Carry Weight and Action Points. Default : 1X",
+					"valueOptions": {
+					"options": ["0X", "1X", "2X"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Adult Harvesting",
+			"content": [
+				{
+					"text": "Adult Resource Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='12'> Sold = Adult will be sold for Caps \n Exiled = Adult will be Exiled and will leave behind items \n Butchered = Adult will be Butchered for Meat \n Caged = Adult will be Caged for storage and future usage (Requires Wasteland Dairy except Settlers)</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fMessageAR_Type:AdultResources",
+					"text": "Adult Resources Notification Type",
+					"type": "stepper",
+					"help": "Toggle between Notification, Message Box, Disabled. Default : Notification",
+					"valueOptions": {
+					"options": ["Notification", "Message Box", "Disabled"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllowSettlers:AdultResources",
+					"text": "Allow Settlers to be harvested",
+					"type": "stepper",
+					"help": "Allow Settlers to be harvested. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllowNONWDF:AdultResources",
+					"text": "Allow Non-WDF Workshop Creatures to be harvested",
+					"type": "stepper",
+					"help": "Allow Non-WDF Workshop Creatures to be harvested. Default : Disable",
+					"valueOptions": {
+					"options": ["Disable", "Enable"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fReceiverAR:AdultResources",
+					"text": "Receiver of Adult Resources",
+					"type": "stepper",
+					"help": "Toggle between Nearest Workshop or Player. Default : Workshop",
+					"valueOptions": {
+					"options": ["Workshop", "Player"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Commands and Hotkeys",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Sell the Adult.",
+					"type": "button",
+					"help": "Sell the Adult.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+					"function": "GiveNPCUnderCrosshairs_SellasSlave"
+					}
+				},
+				{
+					"id": "Sell_the_NPC",
+					"text": "Sell the Adult. (Hotkey)",
+					"type": "hotkey",
+					"help": "Sell the Adult."
+				},
+				{
+					"text": "Exile the Adult.",
+					"type": "button",
+					"help": "Exile the Adult.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+					"function": "GiveNPCUnderCrosshairs_LeavingHome"
+					}
+				},
+				{
+					"id": "Leave_Home_NPC",
+					"text": "Exile the Adult. (Hotkey)",
+					"type": "hotkey",
+					"help": "Exile the Adult."
+				},
+				{
+					"text": "Butcher the Adult.",
+					"type": "button",
+					"help": "Butcher the Adult.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+					"function": "GiveNPCUnderCrosshairs_Butchered"
+					}
+				},
+				{
+					"id": "Butcher_NPC",
+					"text": "Butcher the Adult. (Hotkey)",
+					"type": "hotkey",
+					"help": "Butcher the Adult."
+				},
+				{
+					"text": "Cage the Adult.",
+					"type": "button",
+					"help": "Cage the Adult.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+					"function": "GiveNPCUnderCrosshairs_Caged"
+					}
+				},
+				{
+					"id": "Caged_NPC",
+					"text": "Cage the Adult. (Hotkey)",
+					"type": "hotkey",
+					"help": "Cage the Adult."
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Renaming Options",
+			"content": [
+				{
+					"text": "Renaming Commands",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Rename NPC",
+					"type": "button",
+					"help": "Selecting a NPC to be Renamed.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA5C",
+					"function": "GiveNPCUnderCrosshairs_Rename"
+					}
+				},
+				{
+					"id": "Rename_NPC",
+					"text": "Rename NPC (Hotkey)",
+					"type": "hotkey",
+					"help": "Selecting a NPC to be Renamed."
+				},
+				{
+					"id": "fRename:Baby",
+					"text": "All New Babies born will be named",
+					"type": "switcher",
+					"help": "If New Babies born will be automatically named by the Mod. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_ReRenaming:Baby",
+					"text": "Allow Re-Renaming of NPCs",
+					"type": "switcher",
+					"help": "Allow Re-Renaming of NPCs. Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Humans",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fRename_Baby:Baby",
+					"text": "Human(& Ghoul)",
+					"type": "switcher",
+					"help": "If Human(& Ghoul) Babies will be Automatically Named by the Mod. Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Stillborn Human Baby Naming",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fChance_Viable_Renaming:Baby",
+					"text": "Stillborn Human Baby Naming",
+					"type": "stepper",
+					"help": "When and if a baby dies during child birth, The Mother may still name the baby. Default : Off",
+					"valueOptions": {
+					"options": ["Off", "Player Only Stillborn babies", "NPC Stillborn babies"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"type": "spacer"
+				},
+				{
+					"text": "*Creature Renaming Options is in the Wasteland Offspring MCM",
+					"align": "center",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Existence - Breeder",
+			"content": [
+				{
+					"text": "Existence - Breeder",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fWaitTime_Breeder:Misc",
+					"text": "How Long before Breeder Virus Distributor Occurs",
+					"type": "slider",
+					"help": "Select How long it takes for NPCs to get Breeder Virus (Random Time between 1 second and this option). Default = 15 Seconds.",
+					"valueOptions": {
+					"min": 0,
+					"max": 25,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Breeder:Misc",
+					"text": "Chances of Breeder Virus for Default",
+					"type": "slider",
+					"help": "what are the chances for Default to get Breeder Virus. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Breeder_Companion:Misc",
+					"text": "Chances of Breeder Virus for Companions",
+					"type": "slider",
+					"help": "what are the chances for Companions to get Breeder Virus. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Breeder_Faction:Misc",
+					"text": "Factional Breeder Virus",
+					"type": "switcher",
+					"help": "Breeder Virus will be sorted to its faction. (See Next Page) Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_Settler:BreederChance",
+					"text": "Settler Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Settler having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_BOS:BreederChance",
+					"text": "Brotherhood of Steel Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Brotherhood of Steel having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_DLC04_Slaves:BreederChance",
+					"text": "Captives (inc. Nukaworld's Slaves) Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Captive (inc. Nukaworld's Slaves) having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_COA:BreederChance",
+					"text": "Children of Atom Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Children of Atom having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_Gunner:BreederChance",
+					"text": "Gunner Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Gunner having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_Institute:BreederChance",
+					"text": "Institute Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Institute having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_Institute_Synth:BreederChance",
+					"text": "Institute Synth Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Institute Synth having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_MM:BreederChance",
+					"text": "Minutemen Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Minutemen having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_Raider:BreederChance",
+					"text": "Raiders Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Raiders having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_RR:BreederChance",
+					"text": "Railroad Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Railroad having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBreederChance_Vault81:BreederChance",
+					"text": "Vault 81 Breeder Virus Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Vault 81 having a Breeder Virus. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Breeder_Elderly:Misc",
+					"text": "Elderly Breeder Virus",
+					"type": "switcher",
+					"help": "if Elderly are allowed the Breeder Virus Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Existence - Impregnations",
+			"content": [
+				{
+					"text": "Existence - Impregnations",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPower_Advanced:Misc",
+					"text": "Advanced Pregnancy Month",
+					"type": "slider",
+					"help": "At what month is an advanced pregnancy is defaulted to. Default : 5",
+					"valueOptions": {
+					"min": 0,
+					"max": 9,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPower_Adv_Mod:Misc",
+					"text": "Advanced Pregnancy Modifier",
+					"type": "slider",
+					"help": "How many months difference can the advanced pregnancy be. + or - to the option above. Default : 2",
+					"valueOptions": {
+					"min": 0,
+					"max": 3,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<p align='center'><font size='12'>so if Advanced Pregnancy Month is set at 5 and Advanced Pregnancy Modifier is 2 then the advanced pregnancy will be between 3 to 7 months along.</font></p>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"id": "fWaitTime_Pregnancy:Misc",
+					"text": "How Long before Pregnancy Distributor Occurs",
+					"type": "slider",
+					"help": "Select How long it takes for NPCs to get Pregnant (Random Time between 1 second and this option). Default = 15 Seconds.",
+					"valueOptions": {
+					"min": 0,
+					"max": 25,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Pregnancy:Misc",
+					"text": "Chances of Pregnancy for Default",
+					"type": "slider",
+					"help": "what are the chances for Default to get Pregnancy. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Pregnancy_Companion:Misc",
+					"text": "Chances of Pregnancy for Companions",
+					"type": "slider",
+					"help": "what are the chances for Companions to get Pregnancy. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Pregnancy_Faction:Misc",
+					"text": "Factional Pregnancies",
+					"type": "switcher",
+					"help": "Pregnancies will be sorted to its faction Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_Settler:PregnantChance",
+					"text": "Settler Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Settler NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_BOS:PregnantChance",
+					"text": "BOS Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Brotherhood of Steel NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_DLC04_Slaves:PregnantChance",
+					"text": "Captives (inc. Nukaworld's Slaves) Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting a Captive (inc. Nukaworld's Slaves) NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_COA:PregnantChance",
+					"text": "COA Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Children of Atom NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_Gunner:PregnantChance",
+					"text": "Gunner Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Gunner NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_Institute:PregnantChance",
+					"text": "Institute Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Institute NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_MM:PregnantChance",
+					"text": "Minutemen Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Minutemen NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_Raider:PregnantChance",
+					"text": "Raider Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Raider NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_RR:PregnantChance",
+					"text": "Railroad Impregnation Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Railroad NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChance_Vault81:PregnantChance",
+					"text": "Vault 81 Pregnancy Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of getting Vault 81 NPC to appear to be Pregnant in Game. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Pregnancy_Elderly:Misc",
+					"text": "Elderly Pregnancy",
+					"type": "switcher",
+					"help": "if Elderly are allowed Pregnancy Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Existence - Baby Choice",
+			"content": [
+				{
+					"text": "Existence - Baby Choice",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPregnantChoice:PregnantChoice",
+					"text": "Default Baby Choice",
+					"type": "stepper",
+					"help": "Select the Everyone (Unless Factions are allowed) Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_Companion:PregnantChoice",
+					"text": "Companion Baby Choice",
+					"type": "stepper",
+					"help": "Select the Companion Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_Settler:PregnantChoice",
+					"text": "Settler Baby Choice",
+					"type": "stepper",
+					"help": "Select the Settler Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_BOS:PregnantChoice",
+					"text": "Brotherhood of Steel Baby Choice",
+					"type": "stepper",
+					"help": "Select the Brotherhood of Steel Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only. (BoS Babies Require INVB_WastelandOffspring)",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_DLC04_Slaves:PregnantChoice",
+					"text": "Captives (inc. Nukaworld's Slaves) Baby Choice",
+					"type": "stepper",
+					"help": "Select the Captives (inc. Nukaworld's Slaves) Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_COA:PregnantChoice",
+					"text": "Children of Atom Baby Choice",
+					"type": "stepper",
+					"help": "Select the Children of Atom Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_Gunner:PregnantChoice",
+					"text": "Gunner Baby Choice",
+					"type": "stepper",
+					"help": "Select the Gunner Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only. (Gunner Babies Require INVB_WastelandOffspring)",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_Institute:PregnantChoice",
+					"text": "Institute Baby Choice",
+					"type": "stepper",
+					"help": "Select the Institute Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_MM:PregnantChoice",
+					"text": "Minutemen Baby Choice",
+					"type": "stepper",
+					"help": "Select the Minutemen Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_Raider:PregnantChoice",
+					"text": "Raider Baby Choice",
+					"type": "stepper",
+					"help": "Select the Raider Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only. (Raider Babies Require INVB_WastelandOffspring)",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_RR:PregnantChoice",
+					"text": "Railroad Baby Choice",
+					"type": "stepper",
+					"help": "Select the Railroad Baby Choice - All, Both(Baby or Creature), Baby Only, Fuckable Creatures Only, All Creatures Only, or Alive Baby Only.",
+					"valueOptions": {
+					"options": ["All", "Baby or Creature", "Baby Only", "Fuckable Creatures Only", "All Creatures Only", "Alive Baby Only"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fPregnantChoice_Vault81:PregnantChoice",
+					"text": "Vault 81 Baby Choice",
+					"type": "stepper",
+					"help": "Select the Vault 81 Baby Choice - Human Baby, Human Baby, Vault 81 Baby, Vault 81 Baby, or Alive Vault 81 Baby. (Vault 81 Babies Require INVB_WastelandOffspring)",
+					"valueOptions": {
+					"options": ["Human Baby", "Human Baby", "Vault 81 Baby", "Vault 81 Baby", "Alive Vault 81 Baby"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Existence - Baby Outcome",
+			"content": [
+				{
+					"text": "Existence - Baby Outcome",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fPregnancyIssues:Misc",
+					"text": "Pregnancy Issues",
+					"type": "stepper",
+					"help": "Select when Pregnancy Issues Occur - Disable, On Spawn, or halfway through a Pregnancy.",
+					"valueOptions": {
+					"options": ["Disable", "On Spawn", "halfway through a Pregnancy"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice:BirthingChoice",
+					"text": "Default Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Default Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_Companion:BirthingChoice",
+					"text": "Companion Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Companion Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_Settler:BirthingChoice",
+					"text": "Settler Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Settler Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_BOS:BirthingChoice",
+					"text": "Brotherhood of Steel Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Brotherhood of Steel Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_DLC04_Slaves:BirthingChoice",
+					"text": "Captives (inc. Nukaworld's Slaves) Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Captives (inc. Nukaworld's Slaves) Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_COA:BirthingChoice",
+					"text": "Children of Atom Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Children of Atom Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_Gunner:BirthingChoice",
+					"text": "Gunner Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Gunner Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_Institute:BirthingChoice",
+					"text": "Institute Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Institute Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_MM:BirthingChoice",
+					"text": "Minutemen Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Minutemen Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_Raider:BirthingChoice",
+					"text": "Raider Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Raider Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_RR:BirthingChoice",
+					"text": "Railroad Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Railroad Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fBirthingChoice_Vault81:BirthingChoice",
+					"text": "Vault 81 Pregnancy Perk",
+					"type": "stepper",
+					"help": "Select the Vault 81 Baby Outcome - Normal Pregnancy, Sterility, No Baby, Infanticide, Mutated Reproduction, Phantom Pregnancy, Poor Lifestyle, Stillborn, Surrogate, or Random.",
+					"valueOptions": {
+					"options": ["Normal Pregnancy", "Sterility", "No Baby", "Infanticide", "Mutated Reproduction", "Phantom Pregnancy", "Poor Lifestyle", "Stillborn", "Surrogate", "Random"],
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Existence - STDs",
+			"content": [
+				{
+					"text": "Existence - STDs",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fWaitTime_STDs:Misc",
+					"text": "How Long before STDs Distributor Occurs",
+					"type": "slider",
+					"help": "Select How long it takes for NPCs to get STDs (Random Time between 1 second and this option). Default = 15 Seconds.",
+					"valueOptions": {
+					"min": 0,
+					"max": 25,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_STDs:Misc",
+					"text": "Chances of STDs for Default",
+					"type": "slider",
+					"help": "what are the chances for Default to get STDs. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_STDs_Companion:Misc",
+					"text": "Chances of STDs for Companions",
+					"type": "slider",
+					"help": "what are the chances for Companions to get STDs. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_STDs_Faction:Misc",
+					"text": "Factional STDs",
+					"type": "switcher",
+					"help": "STDs will be sorted to its faction. (See Next Page) Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_Settler:STDChance",
+					"text": "Settler STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Settler having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_BOS:STDChance",
+					"text": "Brotherhood of Steel STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Brotherhood of Steel having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_DLC04_Slaves:STDChance",
+					"text": "Captives (inc. Nukaworld's Slaves) STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Captive (inc. Nukaworld's Slaves) having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_COA:STDChance",
+					"text": "Children of Atom STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Children of Atom having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_Gunner:STDChance",
+					"text": "Gunner STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Gunner having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_Institute:STDChance",
+					"text": "Institute STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Institute having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_Institute_Synth:STDChance",
+					"text": "Institute Synth STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Institute Synth having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_MM:STDChance",
+					"text": "Minutemen STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Minutemen having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_Raider:STDChance",
+					"text": "Raiders STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Raiders having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_RR:STDChance",
+					"text": "Railroad STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Railroad having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fSTDChance_Vault81:STDChance",
+					"text": "Vault 81 STD Chances",
+					"type": "slider",
+					"help": "Select the chance percentage of a Vault 81 having a STD. Default : 50",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_STDs_Elderly:Misc",
+					"text": "Elderly STDs",
+					"type": "switcher",
+					"help": "if Elderly are allowed STDs Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "<font size='12'>Fun Fact. Elderly can have STDs.</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Existence - Traits & Misc",
+			"content": [
+				{
+					"text": "Existence - Traits",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fTraits:Misc",
+					"text": "Existence Traits",
+					"type": "stepper",
+					"help": "Select when Existence Traits Occur - Disable, On Spawn, or after a Sex scene.",
+					"valueOptions": {
+					"options": ["Disable", "On Spawn", "after a Sex scene"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fWaitTime_Traits:Misc",
+					"text": "How Long before Traits Distributor Occurs",
+					"type": "slider",
+					"help": "Select How long it takes for NPCs to get Traits (Random Time between 1 second and this option). Default = 15 Seconds.",
+					"valueOptions": {
+					"min": 0,
+					"max": 25,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Traits:Misc",
+					"text": "Chances of Traits for Default",
+					"type": "slider",
+					"help": "what are the chances for Default to get Traits. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Traits_Companion:Misc",
+					"text": "Chances of Traits for Companions",
+					"type": "slider",
+					"help": "what are the chances for Companions to get Traits. Disable : 0 Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTakeoverBlack:Takeover",
+					"text": "Raider Black Takeover Perk",
+					"type": "slider",
+					"help": "Select the chance percentage of a Raider NPC having the Black Racial Perk. (Designed for the Mod Black Male Raiders) Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fTakeoverVault81:Takeover",
+					"text": "Vault 81 Takeover Perk",
+					"type": "slider",
+					"help": "Select the chance percentage of a Vault 81 NPC having the Vault 81 Racial Perk. (Requires WDF) Default : 0",
+					"valueOptions": {
+					"min": 0,
+					"max": 100,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAllow_Traits_Elderly:Misc",
+					"text": "Elderly Traits",
+					"type": "switcher",
+					"help": "if Elderly are allowed Traits Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "F.A.Q.",
+			"content": [
+				{
+					"text": "Frequently Asked Questions and Answers",
+					"help": "This is still in experimental stages with the new Alpha releases",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Existence Pregnancy Outcomes",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": " Normal Pregnancy = this is normal, it does nothing therefore the baby is born like normal. \n Sterility = NPCs will never get Pregnant or Father a child. \n No Baby = Completely removes the baby. \n Infanticide = Mother will kill the baby \n Mutated Reproduction = The Mother's Reproductive system to far too damaged to produce a child \n Phantom Pregnancy = The Mother has a phantom pregnancy which means that there is no baby. \n Poor Lifestyle = 50% chance of surviving baby or dead baby. \n Stillborn = The Baby will die when born. \n Surrogate = The mother will sell the baby. \n Random = any of the above",
+					"align": "left",
+					"type": "text"
+				},
+				{
+					"text": "Body Morphing Issues",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": " 1. Exit game. \n 2. Open Bodyslide. \n 3. Tick Build Morphs and build meshes.",
+					"align": "left",
+					"type": "text"
+				},
+				{
+					"type": "spacer"
+				},
+				{
+					"text": "If you or NPCs are not getting Pregnant",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": " 1. Go to Debug page 3 \n 2. Click Impregnate \n 3. See if that works \n or \n 1. Craft the Frogless Fertility Test Kit or cheat one(XX00C167) \n 2. Use it on NPC (or yourself but move away from others before using it) \n 3. Take screenshot of Message and upload it to the loverslab thread",
+					"align": "left",
+					"type": "text"
+				},
+				{
+					"type": "spacer"
+				},
+				{
+					"text": "If you still have a big belly after birth",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": " 1. Post Partum has been enabled \n 2. Simply wait it out, the belly will get smaller over time \n 3. After post partum is completed then you can disable it if you like",
+					"align": "left",
+					"type": "text"
+				}
+				
+			]
+		},
+		{
+			"pageDisplayName": "Debug (Page 1)",
+			"content": [
+				{
+					"text": "Debugging Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "FPFP_BasePregSpell Fix",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Gives NPC(or player) a preg data",
+					"type": "button",
+					"help": "This will give the targeted NPC Basepregdata if it fails for some reason.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_FixBasePregSpell"
+					}
+				},
+				{
+					"id": "Basepregdata_HK",
+					"text": "Gives NPC(or player) a preg data",
+					"type": "hotkey",
+					"help": "This will give the targeted NPC Basepregdata if it fails for some reason."
+				},
+				{
+					"text": "Player Pregnancy Info",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Show Player Pregnancy Info",
+					"type": "button",
+					"help": "This shows the information on a currently pregnant player. This show's what doctors show when you ask for a checkup. You may need to un-pause to see the messages.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|F99",
+					"function": "ShowPlayerPregnancyInfo"
+					}
+				},
+				{
+					"id": "Player_Pregnancy",
+					"text": "Show Player Pregnancy Hotkey",
+					"type": "hotkey",
+					"help": "This shows the information on a currently pregnant player. This show's what doctors show when you ask for a checkup. You may need to un-pause to see the messages."
+				},
+				{
+					"text": "Target Pregnancy Info",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Show Target Pregnancy Info",
+					"type": "button",
+					"help": "This shows the pregnancy info on the last actor under the crosshair. You may need to un-pause to see the messages.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|F99",
+					"function": "ShowNPCUnderCrosshairsPregnancyInfo"
+					}
+				},
+				{
+					"id": "Target_Pregnancy",
+					"text": "Show Target Pregnancy Hotkey",
+					"type": "hotkey",
+					"help": "This shows the pregnancy info on the last actor under the crosshair."
+				},
+				{
+					"text": "Baby Holding Reset",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "Baby_Holding_Reset_Me",
+					"text": "Baby Holding Reset for Player (Hotkey)",
+					"type": "hotkey",
+					"help": "This Resets the Baby Holding Animation (Incase the Player is holding Air)."
+				},
+				{
+					"text": "Baby Holding Reset (Player)",
+					"type": "button",
+					"help": "This Resets the Baby Holding Animation (Incase the Player is holding Air).",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9B5",
+					"function": "GiveMyselfStuff"
+					}
+				},
+				{
+					"text": "Baby Holding Reset (NPC)",
+					"type": "button",
+					"help": "This Resets the Baby Holding Animation (Incase the NPC is holding Air).",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9B5",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				},
+				{
+					"id": "Baby_Holding_Reset",
+					"text": "Baby Holding Reset (Hotkey)",
+					"type": "hotkey",
+					"help": "This Resets the Baby Holding Animation (Incase the NPC is holding Air)."
+				},
+				{
+					"text": "Pregnancy Perk and Spell Reset",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Pregnancy Perk and Spell Reset (Player)",
+					"type": "button",
+					"help": "This Resets Pregnancy Perk and Spell for the Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9B7",
+					"function": "GiveMyselfStuff"
+					}
+				},
+				{
+					"text": "Pregnancy Perk and Spell Reset (NPC)",
+					"type": "button",
+					"help": "This Resets Pregnancy Perk and Spell for a NPC.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9B7",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Debug (Page 2)",
+			"content": [
+				{
+					"text": "Debugging Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Show Registered Baby Addons",
+					"type": "button",
+					"help": "Show registered addons. Takes a while if you have a lot of them. Note that you may need to un-pause to see the messages and you have five seconds to leave MCM.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|3DB1",
+					"function": "ShowRegisteredAddons"
+					}
+				},
+				{
+					"text": "Clear and Register Baby Addons",
+					"type": "button",
+					"help": "Clears all addons from the system and then registers addons that are still installed. Use this when you have removed an addon.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|3DB1",
+					"function": "ReregisterBabyTypeAddons"
+					}
+				},
+				{
+					"text": "Reset Player Body After Pregnancy",
+					"type": "button",
+					"help": "If you have lasting body morphs option on, use this to reset the player back to normal. Only works if the player isn't pregnant.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|F99",
+					"function": "ResetPlayerBody"
+					}
+				},
+				{
+					"text": "Restart Family Planning Enhanced's MCM",
+					"type": "button",
+					"help": "Restarts the MCM quest if need be.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|F99",
+					"function": "RestartMCM"
+					}
+				},
+				{
+					"id": "fVerboseLogging:Debugging",
+					"text": "Verbose Script Logging",
+					"type": "switcher",
+					"help": "Enable trace-level logging in various scripts. Generates a lot of log spam, only useful for finding bugs.  Default : OFF",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "WARNING: Once you press the Stop Family Planning Enhanced button, the process starts immediately and is irreversible",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Stop Family Planning Enhanced",
+					"type": "button",
+					"help": "Stops Family Planning Enhanced. For those who want a clean start or want to remove the mod. Note that you need to un-pause the game after clicking this.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|F99",
+					"function": "StopFPE"
+					}
+				},
+				{
+					"text": "Start Family Planning Enhanced",
+					"type": "button",
+					"help": "Starts Family Planning Enhanced. Use this after stopping FPE to start fresh.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|F99",
+					"function": "StartFPE"
+					}
+				},
+				{
+					"text": "Other Debug Commands",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Ghost",
+					"type": "button",
+					"help": "This toggles the ghost flag on the selected NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Ghost"
+					}
+				},
+				{
+					"text": "More Details for Baby Addons",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Show Added Baby Addons(More Details)",
+					"type": "button",
+					"help": "Show Added Details for registered addons. Takes a while if you have a lot of them. Note that you may need to un-pause to see the messages and you have five seconds to leave MCM.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|3DB1",
+					"function": "ShowRegisteredAddons_Details"
+					}
+				},
+				{
+					"text": "Show Added Baby Addons(Messages)",
+					"type": "button",
+					"help": "Show Messages for registered addons. Takes a while if you have a lot of them. Note that you may need to un-pause to see the messages and you have five seconds to leave MCM.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|3DB1",
+					"function": "ShowRegisteredAddons_Messages"
+					}
+				},
+				{
+					"text": "Show Added Baby Addons(Names)",
+					"type": "button",
+					"help": "Show Names for registered addons. Takes a while if you have a lot of them. Note that you may need to un-pause to see the messages and you have five seconds to leave MCM.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|3DB1",
+					"function": "ShowRegisteredAddons_Names"
+					}
+				},
+				{
+					"text": "Reset Baby Names",
+					"type": "button",
+					"help": "Resets the Baby Name Quest (if you added new names to the list)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "ResetQuest_FPFP_BabyNames"
+					}
+				},
+				{
+					"text": "Show Added Baby Addons(Adult Resources)",
+					"type": "button",
+					"help": "Show Adult Resources Details for registered addons. Takes a while if you have a lot of them. Note that you may need to un-pause to see the messages and you have five seconds to leave MCM.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|3DB1",
+					"function": "ShowRegisteredAddons_Adult"
+					}
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Debug (Page 3)",
+			"content": [
+				{
+					"text": "Baby Debug",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='15'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Impregnate",
+					"type": "button",
+					"help": "This Impregnates the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Impregnate"
+					}
+				},
+				{
+					"id": "Impregnate_NPC",
+					"text": "Impregnate (Hotkey)",
+					"type": "hotkey",
+					"help": "This Impregnates the NPC or Player."
+				},
+				{
+					"text": "Impregnate(Player with NPC)",
+					"type": "button",
+					"help": "This Impregnates the Player with targeted NPC.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Impregnate_Player"
+					}
+				},
+				{
+					"id": "Impregnate_Player",
+					"text": "Impregnate(Player with NPC) (Hotkey)",
+					"type": "hotkey",
+					"help": "This Impregnates the Player with targeted NPC."
+				},
+				{
+					"text": "Impregnate (Advanced)",
+					"type": "button",
+					"help": "This Impregnates the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Impregnate_advanced"
+					}
+				},
+				{
+					"id": "Impregnate_NPC_Adv",
+					"text": "Impregnate (Advanced) (Hotkey)",
+					"type": "hotkey",
+					"help": "This Impregnates the NPC or Player with an advanced Pregnancy."
+				},
+				{
+					"text": "Impregnate (Advanced) (Player with NPC)",
+					"type": "button",
+					"help": "This Impregnates the Player with targeted NPC with an advanced Pregnancy.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Impregnate_Player_advanced"
+					}
+				},
+				{
+					"id": "Impregnate_Player_Adv",
+					"text": "Impregnate (Advanced) (Player with NPC) (Hotkey)",
+					"type": "hotkey",
+					"help": "This Impregnates the Player with targeted NPC."
+				},
+				{
+					"text": "Give Birth",
+					"type": "button",
+					"help": "This makes a NPC or Player Give Birth.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Birth"
+					}
+				},
+				{
+					"id": "Give_Birth_NPC",
+					"text": "Give Birth (Hotkey)",
+					"type": "hotkey",
+					"help": "This makes the NPC or Player Give Birth."
+				},
+				{
+					"text": "Grows Baby",
+					"type": "button",
+					"help": "This Grows a Baby that is on a NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_GrowBaby"
+					}
+				},
+				{
+					"id": "Grows_Baby_NPC",
+					"text": "Grows Baby (Hotkey)",
+					"type": "hotkey",
+					"help": "This Grows a Baby that is on the NPC or Player."
+				},
+				{
+					"text": "Abort Pregnancy",
+					"type": "button",
+					"help": "This Aborts the Pregnancy for a NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Abort"
+					}
+				},
+				{
+					"id": "Abort_Pregnancy_NPC",
+					"text": "Abort Pregnancy (Hotkey)",
+					"type": "hotkey",
+					"help": "This Aborts the Pregnancy for the NPC or Player."
+				},
+				{
+					"text": "<font size='15'> NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Grows Child (NPC)",
+					"type": "button",
+					"help": "This Grows a Child",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_GrowChild"
+					}
+				},
+				{
+					"id": "Grows_Child_NPC",
+					"text": "Grows Child (Hotkey)",
+					"type": "hotkey",
+					"help": "This Grows a Child."
+				},
+				{
+					"text": "Leave Home (NPC)",
+					"type": "button",
+					"help": "This either Butchers an Animal or migrates a NPC (depending on Selection)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_LeaveHome"
+					}
+				},
+				{
+					"id": "Leave_Home_NPC",
+					"text": "Leave Home (Hotkey)",
+					"type": "hotkey",
+					"help": "This either Butchers an Animal or migrates a NPC (depending on Selection)"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Debug (Page 4)",
+			"content": [
+				{
+					"text": "Unfreeze Pregnancies (Note. you do need to click Give Birth Above)",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Unfreeze Pregnancies",
+					"type": "button",
+					"help": "This Unfreeze Pregnancies on the Player or NPCs (depending on Selection)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Unfrozen"
+					}
+				},
+				{
+					"id": "Unfreeze_Pregnancies",
+					"text": "Unfreeze Pregnancies (Hotkey)",
+					"type": "hotkey",
+					"help": "This Unfreeze Pregnancies on the Player or NPCs (depending on Selection)"
+				},
+				{
+					"text": "Pregnancy Perk Remover",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Pregnancy Perk Remover",
+					"type": "button",
+					"help": "This Removes Pregnancy Perks on the Player or NPCs (depending on Selection)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "Perk_Remover"
+					}
+				},
+				{
+					"id": "Perk_Remover",
+					"text": "Pregnancy Perk Remover (Hotkey)",
+					"type": "hotkey",
+					"help": "This Removes Pregnancy Perks on the Player or NPCs (depending on Selection)"
+				},
+				{
+					"text": "STD Perk Remover",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "STD Perk Remover",
+					"type": "button",
+					"help": "This Removes STD Perks on the Player or NPCs (depending on Selection)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "STD_Remover"
+					}
+				},
+				{
+					"id": "STD_Remover",
+					"text": "STD Perk Remover (Hotkey)",
+					"type": "hotkey",
+					"help": "This Removes STD Perks on the Player or NPCs (depending on Selection)"
+				},
+				{
+					"text": "Lactation Commands",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "LactMax",
+					"type": "button",
+					"help": "Gives LactMax to NPC or Player (depending on Selection)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Lactation_Aid"
+					}
+				},
+				{
+					"id": "LactMax",
+					"text": "LactMax (Hotkey)",
+					"type": "hotkey",
+					"help": "This Removes STD Perks on the Player or NPCs (depending on Selection)"
+				},
+				{
+					"text": "Forever Lactation Perk",
+					"type": "button",
+					"help": "Gives the Forever Lactation Perk to NPC or Player (depending on Selection)",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Lactation_Full"
+					}
+				},
+				{
+					"id": "Lactation_Full",
+					"text": "Forever Lactation Perk (Hotkey)",
+					"type": "hotkey",
+					"help": "Gives the Forever Lactation Perk to NPC or Player (depending on Selection)"
+				},
+				{
+					"text": "Pick Up Lines",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "Pick Up Lines",
+					"type": "button",
+					"help": "Uses Pick Up Lines on NPCs.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_PickupLines"
+					}
+				},
+				{
+					"id": "PickupLines",
+					"text": "Pick Up Lines (Hotkey)",
+					"type": "hotkey",
+					"help": "Uses Pick Up Lines on NPCs."
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Debug (Page 5)",
+			"content": [
+				{
+					"text": "Bodymorph Debug",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "<font size='15'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "Regenerate Body Morphs",
+					"type": "button",
+					"help": "This Regenerate new Body Morphs for the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Regenerate"
+					}
+				},
+				{
+					"id": "Regenerate_Body_Morphs",
+					"text": "Regenerate Body Morphs (Hotkey)",
+					"type": "hotkey",
+					"help": "This Regenerate new Body Morphs for the NPC or Player."
+				},
+				{
+					"text": "Reset Body Morphs",
+					"type": "button",
+					"help": "This Reset Body Morphs for the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Reset"
+					}
+				},
+				{
+					"text": "Reduce Body Morphs",
+					"type": "button",
+					"help": "This Reduces Body Morphs on a NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Reduce"
+					}
+				},
+				{
+					"text": "Bodymorphed to an automatic point",
+					"type": "button",
+					"help": "This build the morphs(Automatically) for the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Month_Auto"
+					}
+				},
+				{
+					"id": "fDebug_Bodymonth:Debugging",
+					"text": "Debug What month of Pregnancy for BodyMorphing Command(Below)",
+					"type": "slider",
+					"help": "Debug What month of Pregnancy for BodyMorphing Command(Below)",
+					"valueOptions": {
+					"min": 0,
+					"max": 15,
+					"step": 1,
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Bodymorphed to option above of pregnancy",
+					"type": "button",
+					"help": "This build the morphs(see option above) for the NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "GiveNPCUnderCrosshairs_Month"
+					}
+				},
+				{
+					"text": "<font size='15'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Debug (AAF)",
+			"content": [
+				{
+					"text": "AAF Options",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "AAF Tags",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fRequireTags:Misc",
+					"text": "Forces AAF Tags",
+					"type": "switcher",
+					"help": "Forces AAF Tags to be used. (instead of any sexual activity) Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "AAF Gender Change",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"text": "AAF Gender Changes the Player(or NPC) to the opposing Gender. \n so Male to Female(AAF) or Female to Male(AAF) \n <font size='16'>(This does not change the actual gender of the Player(or NPC))</font>",
+					"align": "left",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "<font size='15'> Player Based Commands (Have no Target in crosshair) or NPC Based Commands (Target with in crosshair)</font>",
+					"align": "center",
+					"html": true,
+					"type": "text"
+				},
+				{
+					"text": "AAF Gender Change",
+					"type": "button",
+					"help": "This Changes the AAF Gender of Targeted NPC or Player.",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1EA0A",
+					"function": "GiveNPCUnderCrosshairs"
+					}
+				},
+				{
+					"id": "AAF_Gender_Change_NPC",
+					"text": "AAF Gender Change (Hotkey)",
+					"type": "hotkey",
+					"help": "This Changes the AAF Gender of the Targeted NPC or Player."
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Debug (Forces FPE Quests)",
+			"content": [
+				{
+					"text": "Forces Family Planning Enhanced Quests",
+					"help": "These settings are for the quests to simulate a true pregnancy. Turning them off will remove some of the immersive experience",
+					"align": "center",
+					"type": "section"
+				},
+				{
+					"id": "fFatherQuest:Misc",
+					"text": "Forces Father Quest",
+					"type": "switcher",
+					"help": "Forces Father Quest Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fAbortQuest:Misc",
+					"text": "Forces Abort Quest",
+					"type": "switcher",
+					"help": "Forces Abort Quest Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"id": "fLabourQuest:Misc",
+					"text": "Forces Labour Quest",
+					"type": "stepper",
+					"help": "Forces Labour Quest Default : Labour Quest",
+					"valueOptions": {
+					"options": ["Labour Quest", "NPC Birth", "Frozen Pregnancy"],
+					"sourceType": "ModSettingFloat"
+					}
+				},
+				{
+					"text": "Activate Labour Quest",
+					"type": "button",
+					"help": "Activate the Labour Quest",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "DoLabourQuest"
+					}
+				},
+				{
+					"text": "Stop Spread Content",
+					"type": "button",
+					"help": "Stop the Spread Content Quest",
+					"action": {
+					"type": "CallFunction",
+					"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+					"function": "StopSpreadContentQuest"
+					}
+				},
+				{
+					"id": "fLossQuest:Misc",
+					"text": "Forces Loss Quest",
+					"type": "switcher",
+					"help": "Forces Loss Quest Default : ON",
+					"valueOptions": {
+					"sourceType": "ModSettingFloat"
+					}
+				}
+			]
+		}
+	]
+}

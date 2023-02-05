@@ -1,0 +1,395 @@
+{
+  "modName": "FP_FamilyPlanningEnhanced",
+  "keybinds": [
+    {
+      "id": "Player_Pregnancy",
+      "desc": "Show Player Pregnancy Info.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|F99",
+        "function": "ShowPlayerPregnancyInfo",
+        "params": []
+      }
+    },
+	{
+      "id": "Target_Pregnancy",
+      "desc": "Show Target Pregnancy Info.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|F99",
+        "function": "ShowNPCUnderCrosshairsPregnancyInfo",
+        "params": []
+      }
+    },
+	{
+      "id": "Basepregdata_HK",
+      "desc": "This will give the targeted NPC Basepregdata if it fails for some reason.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_FixBasePregSpell",
+        "params": []
+      }
+    },
+	{
+      "id": "PickupLines",
+      "desc": "Use Pickup Lines to seduce NPC",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_PickupLines",
+        "params": []
+      }
+    },
+	{
+      "id": "LactMax",
+      "desc": "Gives LactMax to NPC or Player (depending on Selection)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Lactation_Aid",
+        "params": []
+      }
+    },
+	{
+      "id": "Lactation_Full",
+      "desc": "Gives the full Lactation Perk to NPC or Player (depending on Selection)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Lactation_Full",
+        "params": []
+      }
+    },
+	{
+      "id": "Surrogate",
+      "desc": "Surrogate NPC or Player",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Surrogate",
+        "params": []
+      }
+    },
+	{
+      "id": "Baby_Holding_Reset_Me",
+      "desc": "Baby Holding Reset Hotkey",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9B5",
+        "function": "GiveMyselfStuff",
+        "params": []
+      }
+    },
+	{
+      "id": "Baby_Holding_Reset",
+      "desc": "Baby Holding Reset Hotkey",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9B5",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Chosen_Selector",
+      "desc": "Selecting The Chosen Child Hotkey",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA14",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Impregnate_NPC",
+      "desc": "This Impregnates the NPC.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Impregnate",
+        "params": []
+      }
+    },
+	{
+      "id": "Impregnate_Player",
+      "desc": "This Impregnates the Player with Targeted NPC.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Impregnate_Player",
+        "params": []
+      }
+    },
+	{
+      "id": "Impregnate_NPC_Adv",
+      "desc": "This Impregnates the NPC with an advanced Pregnancy.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Impregnate_advanced",
+        "params": []
+      }
+    },
+	{
+      "id": "Impregnate_Player_Adv",
+      "desc": "This Impregnates the Player with Targeted NPC with an advanced Pregnancy.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Impregnate_Player_advanced",
+        "params": []
+      }
+    },
+	{
+      "id": "Give_Birth_NPC",
+      "desc": "This makes the Player Give NPC.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Birth",
+        "params": []
+      }
+    },
+	{
+      "id": "Grows_Baby_NPC",
+      "desc": "Grows Baby (NPC)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_GrowBaby",
+        "params": []
+      }
+    },
+	{
+      "id": "Abort_Pregnancy_NPC",
+      "desc": "This Aborts the Pregnancy for the NPC.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Abort",
+        "params": []
+      }
+    },
+	{
+      "id": "Grows_Child_NPC",
+      "desc": "Grows Child (NPC)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_GrowChild",
+        "params": []
+      }
+    },
+	{
+      "id": "Extra_Content",
+      "desc": "Extra Content",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_ExtraContent",
+        "params": []
+      }
+    },
+	{
+      "id": "AAF_Gender_Change_NPC",
+      "desc": "This Changes the AAF Gender of Targeted NPC.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA0A",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Chosen_Selector_Grow",
+      "desc": "This choose a NPC to Stay in the Settlement.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA14",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Chosen_Selector_Migrate",
+      "desc": "Selecting The Chosen Child to Migrate",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA2E",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Chosen_Selector_Butchered",
+      "desc": "Selecting a Child to be Chosen to be Butchered.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA2F",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Chosen_Selector_Caged",
+      "desc": "Selecting a Child to be Chosen to be Caged. (Requires Wasteland Dairy Framework)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA30",
+        "function": "GiveNPCUnderCrosshairs",
+        "params": []
+      }
+    },
+	{
+      "id": "Leave_Home_NPC",
+      "desc": "Exile the Child",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+        "function": "GiveNPCUnderCrosshairs_LeavingHome",
+        "params": []
+      }
+    },
+	{
+      "id": "Sell_the_NPC",
+      "desc": "Sell the Child",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+        "function": "GiveNPCUnderCrosshairs_SellasSlave",
+        "params": []
+      }
+    },
+	{
+      "id": "Butcher_NPC",
+      "desc": "Butcher the Child",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+        "function": "GiveNPCUnderCrosshairs_Butchered",
+        "params": []
+      }
+    },
+	{
+      "id": "Caged_NPC",
+      "desc": "Cage the Child",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA37",
+        "function": "GiveNPCUnderCrosshairs_Caged",
+        "params": []
+      }
+    },
+	{
+      "id": "Making_Love",
+      "desc": "Making Love with Marriage Partner",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA0A",
+        "function": "GiveNPCUnderCrosshairs_Married",
+        "params": []
+      }
+    },
+	{
+      "id": "Rename_NPC",
+      "desc": "Selecting a NPC to be Renamed",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1EA5C",
+        "function": "GiveNPCUnderCrosshairs_Rename",
+        "params": []
+      }
+    },
+	{
+      "id": "Unfreeze_Pregnancies",
+      "desc": "This Unfreeze Pregnancies on the Player or NPCs (depending on Selection)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Unfrozen",
+        "params": []
+      }
+    },
+	{
+      "id": "Perk_Remover",
+      "desc": "This Removes Pregnancy Perks on the Player or NPCs (depending on Selection)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "Perk_Remover",
+        "params": []
+      }
+    },
+	{
+      "id": "STD_Remover",
+      "desc": "This Removes STD Perks on the Player or NPCs (depending on Selection)",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "STD_Remover",
+        "params": []
+      }
+    },
+	{
+      "id": "Regenerate_Body_Morphs",
+      "desc": "This Regenerate new Body Morphs for the NPC or Player.",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Regenerate",
+        "params": []
+      }
+    },
+	{
+      "id": "GrowingBaby",
+      "desc": "Toggle Baby to be Growable",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Baby_Growing",
+        "params": []
+      }
+    },
+	{
+      "id": "NonGrowingBaby",
+      "desc": "Toggle Baby to be Not Growable",
+      "action": {
+        "type": "CallFunction",
+        "form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+        "function": "GiveNPCUnderCrosshairs_Baby_NotGrowing",
+        "params": []
+      }
+    },
+	{
+		"id": "Romance_Display_H",
+     	"desc": "This displays the Romance Display window for NPC.",
+		"action": {
+		"type": "CallFunction",
+		"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+		"function": "GiveNPCUnderCrosshairs_Romance"
+        "params": []
+		}
+	},
+	{
+		"id": "Romance_Reset_H",
+      "desc": "This Reset the Romance totals for NPC.",
+		"action": {
+		"type": "CallFunction",
+		"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+		"function": "GiveNPCUnderCrosshairs_Romance_Reset"
+        "params": []
+		}
+	},
+	{
+		"id": "Romance_One_H",
+      "desc": "This sets the Romance totals for NPC to one.",
+		"action": {
+		"type": "CallFunction",
+		"form": "FP_FamilyPlanningEnhanced.esp|1E9EB",
+		"function": "GiveNPCUnderCrosshairs_Romance_one"
+        "params": []
+		}
+	}
+  ]
+}
